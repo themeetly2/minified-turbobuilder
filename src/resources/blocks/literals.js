@@ -29,7 +29,7 @@ function register() {
 
     // number
     registerBlock(`${categoryPrefix}number`, {
-        message0: '⠀%1⠀',
+        message0: ' %1 ',
         args0: [
             {
                 "type": "field_number",
@@ -51,9 +51,10 @@ function register() {
         message0: "'%1'",
         args0: [
             {
-                "type": "field_string",
+                "type": "field_input",
                 "name": "STRING",
                 "value": 0,
+                "spellcheck": false
             }
         ],
         output: "String",
