@@ -171,7 +171,7 @@
 
     function downloadProject() {
         // generate file name
-        let filteredProjectName = projectName.replace(/[^a-z0-9\-]+/gim, "_");
+        let filteredProjectName = (projectName || projectID).replace(/[^a-z0-9\-]+/gim, "_");
         let fileName = filteredProjectName + ".tbext";
         if (!filteredProjectName) {
             fileName = "MyProject.tbext";
