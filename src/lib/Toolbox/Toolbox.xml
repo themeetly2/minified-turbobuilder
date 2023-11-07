@@ -3,8 +3,11 @@
         <block type="control_ifthen" />
         <block type="control_ifthenelse" />
     </category>
+    <category name="Literals" colour="#59C08E">
+        <block type="literals_true" />
+        <block type="literals_false" />
+    </category>
     <category name="Operators" colour="#59C059">
-        <block type="operators_true" />
-        <block type="operators_false" />
+        <block type="operators_equals" />
     </category>
 </xml>

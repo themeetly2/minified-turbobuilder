@@ -5,26 +5,29 @@ const categoryPrefix = 'operators_';
 const categoryColor = '#59C059';
 
 function register() {
-    // true
-    registerBlock(`${categoryPrefix}true`, {
-        message0: 'true',
-        args0: [],
+    // x = y
+    registerBlock(`${categoryPrefix}equals`, {
+        message0: '%1 = %2',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "Number"
+            },
+            {
+                "type": "input_value",
+                "name": "Y",
+                "check": "Number"
+            }
+        ],
         output: "Boolean",
         inputsInline: true,
         colour: categoryColor
-    }, () => {
-        return [`true`, javascriptGenerator.ORDER_ATOMIC];
-    })
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
 
-    // false
-    registerBlock(`${categoryPrefix}false`, {
-        message0: 'false',
-        args0: [],
-        output: "Boolean",
-        inputsInline: true,
-        colour: categoryColor
-    }, () => {
-        return [`false`, javascriptGenerator.ORDER_ATOMIC];
+        return [`${X ? `Number(${X})` : 0} == ${Y ? `Number(${Y})` : 0}`, javascriptGenerator.ORDER_ATOMIC];
     })
 }
 
