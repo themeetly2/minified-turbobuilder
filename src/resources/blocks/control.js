@@ -28,6 +28,7 @@ function register() {
         colour: categoryColor
     }, (block) => {
         const CONDITION = javascriptGenerator.valueToCode(block, 'CONDITION', javascriptGenerator.ORDER_ATOMIC);
+        console.log(CONDITION)
         const BLOCKS = javascriptGenerator.statementToCode(block, 'BLOCKS');
         const code = `if (${CONDITION ? `Boolean(${CONDITION})` : 'false'}) { ${BLOCKS} };`;
         return `${code}\n`;
