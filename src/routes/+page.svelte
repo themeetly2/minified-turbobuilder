@@ -50,8 +50,10 @@
 
     import registerCore from "../resources/blocks/core.js";
     import registerControl from "../resources/blocks/control.js";
+    import registerOperators from "../resources/blocks/operators.js";
     registerCore();
     registerControl();
+    registerOperators();
 
     const en = {
         rtl: false,
