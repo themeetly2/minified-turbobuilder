@@ -4,7 +4,7 @@
         <block type="control_ifthenelse" />
     </category>
     <category name="Operators" colour="#59C059">
-        <block type="boolean_true" />
-        <block type="boolean_false" />
+        <block type="operators_true" />
+        <block type="operators_false" />
     </category>
 </xml>
