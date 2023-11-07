@@ -11,13 +11,11 @@ function register() {
         args0: [
             {
                 "type": "input_value",
-                "name": "X",
-                "check": "Number"
+                "name": "X"
             },
             {
                 "type": "input_value",
-                "name": "Y",
-                "check": "Number"
+                "name": "Y"
             }
         ],
         output: "Boolean",
