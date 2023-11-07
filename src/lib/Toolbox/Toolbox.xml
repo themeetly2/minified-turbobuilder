@@ -6,6 +6,8 @@
     <category name="Literals" colour="#59C08E">
         <block type="literals_true" />
         <block type="literals_false" />
+        <sep gap="16"></sep>
+        <block type="literals_number" />
     </category>
     <category name="Operators" colour="#59C059">
         <block type="operators_equals" />

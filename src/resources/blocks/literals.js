@@ -26,6 +26,25 @@ function register() {
     }, () => {
         return [`false`, javascriptGenerator.ORDER_ATOMIC];
     })
+
+    // number
+    registerBlock(`${categoryPrefix}number`, {
+        message0: '%1',
+        args0: [
+            {
+                "type": "field_number",
+                "name": "NUMBER",
+                "value": 0,
+            }
+        ],
+        output: "Number",
+        inputsInline: true,
+        colour: categoryColor
+    }, () => {
+        const NUMBER = javascriptGenerator.valueToCode(block, 'NUMBER', javascriptGenerator.ORDER_ATOMIC);
+
+        return [NUMBER, javascriptGenerator.ORDER_ATOMIC];
+    })
 }
 
 export default register;
