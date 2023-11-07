@@ -29,7 +29,7 @@ function register() {
 
     // number
     registerBlock(`${categoryPrefix}number`, {
-        message0: ' %1 ',
+        message0: '(%1)',
         args0: [
             {
                 "type": "field_number",
@@ -41,7 +41,7 @@ function register() {
         inputsInline: true,
         colour: categoryColor
     }, (block) => {
-        const NUMBER = javascriptGenerator.valueToCode(block, 'NUMBER', javascriptGenerator.ORDER_ATOMIC);
+        const NUMBER = block.getFieldValue('NUMBER')
 
         return [NUMBER, javascriptGenerator.ORDER_ATOMIC];
     })
@@ -61,7 +61,7 @@ function register() {
         inputsInline: true,
         colour: categoryColor
     }, (block) => {
-        const STRING = javascriptGenerator.valueToCode(block, 'STRING', javascriptGenerator.ORDER_ATOMIC);
+        const STRING = block.getFieldValue('STRING')
 
         return ["'" + STRING + "'", javascriptGenerator.ORDER_ATOMIC];
     })
