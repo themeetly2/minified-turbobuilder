@@ -178,7 +178,7 @@
         }
 
         // data
-        const projectData = State.serializeProject(State.currentProject);
+        const projectData = Blockly.serialization.workspaces.save(workspace)
 
         // zip
         const zip = new JSZip();
@@ -187,12 +187,6 @@
             "This file is not meant to be opened!" +
                 "\nBe careful as you can permanently break your project!"
         );
-
-        // workspaces
-        const workspaces = zip.folder("workspaces");
-        for (const character of State.currentProject.characters) {
-            workspaces.file(character.id + ".xml", character.xml);
-        }
 
         // data
         const data = zip.folder("data");
@@ -243,7 +237,7 @@
 
                 // laod
                 console.log(projectJson); // debug
-                State.loadProject(projectJson, idWorkspacePairs);
+                Blockly.serialization.workspaces.load(projectJson, workspace);
             });
         });
     }
