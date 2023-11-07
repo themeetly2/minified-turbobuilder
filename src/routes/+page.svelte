@@ -190,7 +190,7 @@
 
         // data
         const data = zip.folder("data");
-        data.file("project.json", JSON.String(projectData));
+        data.file("project.json", JSON.stringify(projectData));
 
         // download
         zip.generateAsync({ type: "blob" }).then((blob) => {
