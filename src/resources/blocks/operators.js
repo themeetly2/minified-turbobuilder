@@ -13,7 +13,7 @@ function register() {
         inputsInline: true,
         colour: categoryColor
     }, () => {
-        return `true`;
+        return [`true`, javascriptGenerator.ORDER_ATOMIC];
     })
 
     // false
@@ -24,7 +24,7 @@ function register() {
         inputsInline: true,
         colour: categoryColor
     }, () => {
-        return `false`;
+        return [`false`, javascriptGenerator.ORDER_ATOMIC];
     })
 }
 
