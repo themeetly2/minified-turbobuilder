@@ -6,7 +6,7 @@
     <category name="Literals" colour="#59C08E">
         <block type="literals_true" />
         <block type="literals_false" />
-        <sep gap="128"></sep>
+        <sep gap="64"></sep>
         <block type="literals_number" />
         <block type="literals_string" />
     </category>
