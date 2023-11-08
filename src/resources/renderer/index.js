@@ -1,6 +1,6 @@
 import Blockly from "blockly/core"
 
-class CustomConstantProvider extends Blockly.blockRendering.ConstantProvider {
+class CustomConstantProvider extends Blockly.zelos.ConstantProvider {
     constructor() {
         super();
 
@@ -23,5 +23,3 @@ export default class Renderer extends Blockly.zelos.Renderer {
         return new CustomConstantProvider();
     }
 }
-
-Blockly.blockRendering.register('custom_renderer', customRenderer)
