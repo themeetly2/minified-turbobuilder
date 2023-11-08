@@ -9,6 +9,10 @@ class CustomConstantProvider extends Blockly.zelos.ConstantProvider {
         this.MEDIUM_LARGE_PADDING = 7
         this.LARGE_PADDING = 8
 
+        this.CORNER_RADIUS = 8
+
+        this.STATEMENT_INPUT_SPACER_MIN_WIDTH = 40
+
         this.NOTCH_WIDTH = 15
         this.NOTCH_HEIGHT = 4
 
