@@ -18,4 +18,8 @@ export default class Renderer extends Blockly.zelos.Renderer {
     constructor() {
         super();
     }
+    
+    makeConstants_() {
+        return new CustomConstantProvider();
+    }
 }
