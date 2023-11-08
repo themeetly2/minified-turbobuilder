@@ -73,7 +73,7 @@ function register() {
             {
                 "type": "field_colour",
                 "name": "COLOR",
-                "color": "#f00"
+                "colour": "#ff0000"
             }
         ],
         output: "Color",
