@@ -23,3 +23,5 @@ export default class Renderer extends Blockly.zelos.Renderer {
         return new CustomConstantProvider();
     }
 }
+
+Blockly.blockRendering.register('custom_renderer', customRenderer)
