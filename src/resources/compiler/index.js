@@ -18,7 +18,7 @@ class Compiler {
         const headerCode = [
             `/*`,
             `   This extension was made with TurboBuilder!`,
-            `   https://turbobuilder.vercel.app/`,
+            `   https://turbobuilder-steel.vercel.app/`,
             `*/`,
             `(function (Scratch) {`,
             `const variables = {};`
