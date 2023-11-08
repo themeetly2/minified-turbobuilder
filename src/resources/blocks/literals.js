@@ -65,6 +65,24 @@ function register() {
 
         return ["'" + STRING + "'", javascriptGenerator.ORDER_ATOMIC];
     })
+
+    // color
+    registerBlock(`${categoryPrefix}color`, {
+        message0: "#%1",
+        args0: [
+            {
+                "type": "field_colour",
+                "name": "COLOR",
+            }
+        ],
+        output: "Color",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const COLOR = block.getFieldValue('COLOR')
+
+        return ["'" + COLOR + "'", javascriptGenerator.ORDER_ATOMIC];
+    })
 }
 
 export default register;
