@@ -4,13 +4,16 @@ class CustomConstantProvider extends Blockly.zelos.ConstantProvider {
     constructor() {
         super();
 
-        this.SMALL_PADDING = 2
-        this.MEDIUM_PADDING = 4
-        this.MEDIUM_LARGE_PADDING = 6
+        this.SMALL_PADDING = 3
+        this.MEDIUM_PADDING = 5
+        this.MEDIUM_LARGE_PADDING = 7
         this.LARGE_PADDING = 8
 
-        this.NOTCH_WIDTH = 12
-        this.NOTCH_HEIGHT = 3
+        this.NOTCH_WIDTH = 15
+        this.NOTCH_HEIGHT = 4
+
+        this.FIELD_TEXT_FONTWEIGHT = 'bold';
+        this.FIELD_TEXT_FONTFAMILY = '"Source Code Pro", monospace';
     }
 }
 
