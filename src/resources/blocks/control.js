@@ -30,8 +30,7 @@ function register() {
         const CONDITION = javascriptGenerator.valueToCode(block, 'CONDITION', javascriptGenerator.ORDER_ATOMIC);
         const BLOCKS = javascriptGenerator.statementToCode(block, 'BLOCKS');
         const code = `if (${CONDITION ? `Boolean(${CONDITION})` : 'false'}) {
-            ${BLOCKS}
-        };`;
+            ${BLOCKS}};`;
         return `${code}\n`;
     })
     // if <> then {} else {}
