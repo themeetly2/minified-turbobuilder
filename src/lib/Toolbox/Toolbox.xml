@@ -13,4 +13,7 @@
     <category name="Operators" colour="#59C059">
         <block type="operators_equals" />
     </category>
+    <category name="Debug" colour="#777777">
+        <block type="debug_log" />
+    </category>
 </xml>
