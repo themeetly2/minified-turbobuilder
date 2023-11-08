@@ -67,6 +67,7 @@
     };
 
     import customRenderer from "../resources/renderer"
+    Blockly.blockRendering.unregister('custom_renderer') //weird bug
     Blockly.blockRendering.register('custom_renderer', customRenderer)
 
     const config = {
