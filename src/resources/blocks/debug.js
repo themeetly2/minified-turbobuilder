@@ -7,7 +7,7 @@ const categoryColor = '#777777';
 function register() {
     // if <> then {}
     registerBlock(`${categoryPrefix}log`, {
-        message0: 'log $1',
+        message0: 'log %1',
         args0: [
             {
                 "type": "input_value",
