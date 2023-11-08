@@ -18,6 +18,7 @@
     <category name="Operators" colour="#59C059">
         <block type="operators_equals" />
     </category>
+    <sep></sep>
     <category name="Debug" colour="#666666">
         <block type="debug_log" />
         <block type="debug_warn" />
