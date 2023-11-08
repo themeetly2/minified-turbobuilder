@@ -68,7 +68,7 @@ function register() {
 
     // color
     registerBlock(`${categoryPrefix}color`, {
-        message0: "#%1",
+        message0: "0x%1",
         args0: [
             {
                 "type": "field_colour",
