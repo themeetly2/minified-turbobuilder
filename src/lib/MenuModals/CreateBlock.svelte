@@ -34,11 +34,14 @@
         },
     };
 
+    import customRenderer from "../../resources/renderer"
+    Blockly.blockRendering.register('custom_renderer', customRenderer)
+
     const config = {
         scrollbars: true,
         disable: false,
         theme: Theme,
-        renderer: "zelos",
+        renderer: "custom_renderer",
         grid: {
             spacing: 25,
             length: 3,
