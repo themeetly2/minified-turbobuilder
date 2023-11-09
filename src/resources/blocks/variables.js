@@ -31,7 +31,7 @@ function register() {
     })
 
     // get variable
-    registerBlock(`${categoryPrefix}set`, {
+    registerBlock(`${categoryPrefix}get`, {
         message0: 'get %1',
         args0: [
             {
