@@ -100,6 +100,75 @@ function register() {
 
         return [`${X || 0} < ${Y || 0}`, javascriptGenerator.ORDER_ATOMIC];
     })
+
+    // x and y
+    registerBlock(`${categoryPrefix}and`, {
+        message0: '%1 and %2',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "Boolean"
+            },
+            {
+                "type": "input_value",
+                "name": "Y",
+                "check": "Boolean"
+            }
+        ],
+        output: "Boolean",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
+
+        return [`${X || false} && ${Y || false}`, javascriptGenerator.ORDER_ATOMIC];
+    })
+
+    // x or y
+    registerBlock(`${categoryPrefix}or`, {
+        message0: '%1 or %2',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "Boolean"
+            },
+            {
+                "type": "input_value",
+                "name": "Y",
+                "check": "Boolean"
+            }
+        ],
+        output: "Boolean",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
+
+        return [`${X || false} || ${Y || false}`, javascriptGenerator.ORDER_ATOMIC];
+    })
+
+    // not x
+    registerBlock(`${categoryPrefix}not`, {
+        message0: 'not %1',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "Boolean"
+            }
+        ],
+        output: "Boolean",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+
+        return [`!${X || false}`, javascriptGenerator.ORDER_ATOMIC];
+    })
 }
 
 export default register;

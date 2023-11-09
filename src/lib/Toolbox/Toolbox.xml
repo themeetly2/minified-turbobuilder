@@ -21,6 +21,10 @@
         <block type="operators_strictequals" />
         <block type="operators_more" />
         <block type="operators_less" />
+        <sep gap="48"></sep>
+        <block type="operators_and" />
+        <block type="operators_or" />
+        <block type="operators_not" />
     </category>
     <sep></sep>
     <category name="Debug" colour="#666666">
