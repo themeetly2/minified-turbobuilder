@@ -182,9 +182,9 @@
     function downloadProject() {
         // generate file name
         let filteredProjectName = (projectName || projectID).replace(/[^a-z0-9\-]+/gim, "_");
-        let fileName = filteredProjectName + ".tbext";
+        let fileName = filteredProjectName + ".tb";
         if (!filteredProjectName) {
-            fileName = "MyProject.tbext";
+            fileName = "MyProject.tb";
         }
 
         // data
@@ -215,12 +215,11 @@
         });
     }
     function loadProject() {
-        fileDialog({ accept: ".tbext" }).then((files) => {
+        fileDialog({ accept: ".tb" }).then((files) => {
             if (!files) return;
             const file = files[0];
 
-            // set project name
-            const projectNameIdx = file.name.lastIndexOf(".tbext");
+            const projectNameIdx = file.name.lastIndexOf(".tb");
 
             JSZip.loadAsync(file.arrayBuffer()).then(async (zip) => {
                 console.log("loaded zip file...");
