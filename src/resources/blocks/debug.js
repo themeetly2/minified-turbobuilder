@@ -67,8 +67,9 @@ function register() {
         message0: 'raw %1',
         args0: [
             {
-                "type": "input_value",
-                "name": "RAW"
+                "type": "field_input",
+                "name": "RAW",
+                "spellcheck": false
             }
         ],
         previousStatement: null,
@@ -76,7 +77,7 @@ function register() {
         inputsInline: true,
         colour: categoryColor
     }, (block) => {
-        const RAW = javascriptGenerator.valueToCode(block, 'RAW', javascriptGenerator.ORDER_ATOMIC);
+        const RAW = block.getFieldValue('RAW')
         const code = `${RAW};`;
         return `${code}\n`;
     })
@@ -86,14 +87,16 @@ function register() {
         message0: 'raw %1',
         args0: [
             {
-                "type": "input_value",
-                "name": "RAW"
+                "type": "field_input",
+                "name": "RAW",
+                "spellcheck": false
             }
         ],
+        output: null,
         inputsInline: true,
         colour: categoryColor
     }, (block) => {
-        const RAW = javascriptGenerator.valueToCode(block, 'RAW', javascriptGenerator.ORDER_ATOMIC);
+        const RAW = block.getFieldValue('RAW')
         return [RAW, javascriptGenerator.ORDER_ATOMIC];
     })
 }
