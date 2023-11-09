@@ -179,15 +179,6 @@
         minimap.init();
     });
 
-    let fileMenu;
-    function showFileMenu() {
-        if (fileMenu.style.display == "none") {
-            fileMenu.style.display = "";
-            return;
-        }
-        fileMenu.style.display = "none";
-    }
-
     function downloadProject() {
         // generate file name
         let filteredProjectName = (projectName || projectID).replace(/[^a-z0-9\-]+/gim, "_");
@@ -202,7 +193,8 @@
         // modify data by me wow
         projectData = {
             blockly: projectData,
-            project: extensionMetadata
+            metadata: extensionMetadata,
+            images: extensionImageStates
         }
 
         // zip
@@ -241,9 +233,15 @@
                 const projectJson = JSON.parse(projectJsonString);
 
                 // do your thing
-                for (var i in projectJson.project) {
-                    var v = projectJson.project[i]
+                projectName = projectJson.metadata.name
+                projectID = projectJson.metadata.id
+                for (var i in projectJson.metadata) {
+                    var v = projectJson.metadata[i]
                     extensionMetadata[i] = v
+                }
+                for (var i in projectJson.images) {
+                    var v = projectJson.images[i]
+                    extensionImageStates[i] = v
                 }
 
                 // get project workspace xml stuffs
@@ -268,6 +266,8 @@
                 // laod
                 console.log(projectJson); // debug
                 Blockly.serialization.workspaces.load(projectJson.blockly, workspace);
+
+                updateGeneratedCode()
             });
         });
     }
