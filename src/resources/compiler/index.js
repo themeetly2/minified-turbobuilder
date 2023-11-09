@@ -1,6 +1,8 @@
 import javascriptGenerator from '../javascriptGenerator';
 
-const start = `const audioEngine = Scratch.vm.runtime.audioEngine;
+const start = `
+function doSound(ab, cd) {
+const audioEngine = Scratch.vm.runtime.audioEngine;
 
 const fetchAsArrayBufferWithTimeout = (url) =>
   new Promise((resolve, reject) => {
@@ -115,7 +117,10 @@ const playSound = async (url, target) => {
   } catch (e) {
     console.warn(\`All attempts to play \${url} failed\`, e);
   }
-};`
+};
+
+playSound(ab, cd)
+}`
 
 class Compiler {
     /**
