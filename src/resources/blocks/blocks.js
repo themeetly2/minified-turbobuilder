@@ -71,7 +71,7 @@ function register() {
         const code = `blocks.push({
             opcode: \`${ID}\`,
             blockType: Scratch.BlockType.${TYPE},
-            text: ${TEXT},
+            text: \`${TEXT}\`,
             arguments: {}
         })
         Extension.prototype[\`${ID}\`] = () => { ${FUNC} }`;
