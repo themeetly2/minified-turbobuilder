@@ -536,7 +536,7 @@
                     <div style="margin-right: 8px" />
                     <StyledButton
                         on:click={() => {
-                            window.open("https://turbowarp.org/editor?extension=" + encodeURI("data:text/plain;base64," + btoa(lastGeneratedCode)), '_blank').focus();
+                            window.open("https://turbowarp.org/editor?extension=" + encodeURIComponent("data:text/plain;base64," + btoa(lastGeneratedCode)), '_blank').focus();
                         }}
                     >
                         TurboWarp
@@ -544,7 +544,7 @@
                     <div style="margin-right: 4px" />
                     <StyledButton
                         on:click={() => {
-                            window.open("https://studio.penguinmod.com/editor?extension=" + encodeURI("data:text/plain;base64," + btoa(lastGeneratedCode)), '_blank').focus();
+                            window.open("https://studio.penguinmod.com/editor?extension=" + encodeURIComponent("data:text/plain;base64," + btoa(lastGeneratedCode)), '_blank').focus();
                         }}
                     >
                         PenguinMod
