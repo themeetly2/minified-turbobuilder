@@ -102,6 +102,13 @@ function register() {
                     [ "string", "STRING" ],
                     [ "number", "NUMBER" ],
                     [ "boolean", "BOOLEAN" ],
+                    [ "color", "COLOR" ],
+                    [ "costume", "COSTUME" ],
+                    [ "sound", "SOUND" ],
+                    [ "angle", "ANGLE" ],
+                    [ "matrix", "MATRIX" ],
+                    [ "note", "NOTE" ],
+                    [ "empty", "could put anything here and it would work probably" ],
                 ]
             },
             {
