@@ -197,7 +197,13 @@
         }
 
         // data
-        const projectData = Blockly.serialization.workspaces.save(workspace)
+        let projectData = Blockly.serialization.workspaces.save(workspace)
+
+        // modify data by me wow
+        projectData = {
+            blockly: projectData,
+            project: extensionMetadata
+        }
 
         // zip
         const zip = new JSZip();
@@ -223,7 +229,6 @@
 
             // set project name
             const projectNameIdx = file.name.lastIndexOf(".tbext");
-            projectName = file.name.substring(0, projectNameIdx);
 
             JSZip.loadAsync(file.arrayBuffer()).then(async (zip) => {
                 console.log("loaded zip file...");
@@ -234,6 +239,12 @@
                     .file("project.json")
                     .async("string");
                 const projectJson = JSON.parse(projectJsonString);
+
+                // do your thing
+                for (var i in projectJson.project) {
+                    var v = projectJson.project[i]
+                    extensionMetadata[i] = v
+                }
 
                 // get project workspace xml stuffs
                 const workspacesFolder = zip.folder("workspaces");
@@ -256,7 +267,7 @@
 
                 // laod
                 console.log(projectJson); // debug
-                Blockly.serialization.workspaces.load(projectJson, workspace);
+                Blockly.serialization.workspaces.load(projectJson.blockly, workspace);
             });
         });
     }
