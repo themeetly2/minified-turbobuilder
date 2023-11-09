@@ -13,7 +13,7 @@ function register() {
             {
                 "type": "field_input",
                 "name": "SOUND",
-                "text": "https://www.myinstants.com/media/sounds/extra-reverb-fard-noise.mp3",
+                "text": "https://t.ly/2gHlM",
                 "spellcheck": false
             },
         ],
