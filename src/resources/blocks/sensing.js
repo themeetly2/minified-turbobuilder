@@ -34,7 +34,7 @@ function register() {
         const BLOCKS = javascriptGenerator.statementToCode(block, 'BLOCKS');
         const code = `document.addEventListener("keypress", event => {
             if (event.key == '${KEY}') { ${BLOCKS} }
-        );`;
+        });`;
         return `${code}\n`;
     })
 }
