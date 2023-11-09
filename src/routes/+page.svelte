@@ -531,14 +531,21 @@
                     >
                         Download
                     </StyledButton>
+                    <div style="margin-right: 24px" />
                     <StyledButton
                         on:click={() => {
-                            
-
                             window.open("https://turbowarp.org/editor?extension=" + encodeURI("data:text/plain;base64," + btoa(lastGeneratedCode)), '_blank').focus();
                         }}
                     >
-                        Test in TurboWarp
+                        TurboWarp Test
+                    </StyledButton>
+                    <div style="margin-right: 12px" />
+                    <StyledButton
+                        on:click={() => {
+                            window.open("https://studio.penguinmod.com/editor?extension=" + encodeURI("data:text/plain;base64," + btoa(lastGeneratedCode)), '_blank').focus();
+                        }}
+                    >
+                        PenguinMod Test
                     </StyledButton>
                 </div>
                 <div class="codeWrapper">
