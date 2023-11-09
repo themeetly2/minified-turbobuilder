@@ -1,6 +1,7 @@
 import javascriptGenerator from '../javascriptGenerator';
 
 const start = `
+console.log(Scratch)
 function doSound(ab, cd) {
 const audioEngine = Scratch.vm.runtime.audioEngine;
 
