@@ -115,7 +115,8 @@
     let projectID = "";
     let lastGeneratedCode = "";
 
-    import {PositionedMinimap} from '@blockly/workspace-minimap';
+    import pkg from '@blockly/workspace-minimap';
+    const { PositionedMinimap } = pkg;
     const minimap = new PositionedMinimap(workspace);
     minimap.init();
 
