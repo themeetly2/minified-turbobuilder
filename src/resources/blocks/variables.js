@@ -45,7 +45,7 @@ function register() {
         colour: categoryColor
     }, (block) => {
         const NAME = javascriptGenerator.valueToCode(block, 'NAME', javascriptGenerator.ORDER_ATOMIC);
-        return [`variables["${NAME}"]`, javascriptGenerator.ORDER_ATOMIC];
+        return [`variables[${NAME}]`, javascriptGenerator.ORDER_ATOMIC];
     })
 }
 
