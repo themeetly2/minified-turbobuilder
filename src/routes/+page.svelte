@@ -53,6 +53,7 @@
     import registerCore from "../resources/blocks/core.js";
     import registerControl from "../resources/blocks/control.js";
     import registerSensing from "../resources/blocks/sensing.js";
+    import registerSound from "../resources/blocks/sound.js";
     import registerLiterals from "../resources/blocks/literals.js";
     import registerOperators from "../resources/blocks/operators.js";
     import registerVariables from "../resources/blocks/variables.js";
@@ -61,6 +62,7 @@
     
     registerCore();
     registerControl();
+    registerSound();
     registerSensing();
     registerLiterals();
     registerOperators();
