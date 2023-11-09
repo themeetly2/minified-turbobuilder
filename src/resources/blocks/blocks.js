@@ -117,7 +117,7 @@ function register() {
         inputsInline: false,
         colour: categoryColor,
     }, (block) => {
-        const ID = block.getFieldValue('ID').toUpperCase()
+        const ID = block.getFieldValue('ID')
         const TYPE = block.getFieldValue('TYPE')
         const DEFAULT = javascriptGenerator.valueToCode(block, 'DEFAULT', javascriptGenerator.ORDER_ATOMIC);
         
