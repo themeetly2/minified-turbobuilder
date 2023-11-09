@@ -10,10 +10,8 @@ function register() {
         message0: 'set %1 to %2',
         args0: [
             {
-                "type": "field_input",
-                "name": "NAME",
-                "value": "variable",
-                "spellcheck": false
+                "type": "input_value",
+                "name": "NAME"
             },
             {
                 "type": "input_value",
@@ -25,9 +23,9 @@ function register() {
         inputsInline: true,
         colour: categoryColor
     }, (block) => {
-        const NAME = block.getFieldValue('NAME')
+        const NAME = javascriptGenerator.valueToCode(block, 'NAME', javascriptGenerator.ORDER_ATOMIC);
         const VAR = javascriptGenerator.valueToCode(block, 'VAR', javascriptGenerator.ORDER_ATOMIC);
-        const code = `variables["${NAME}"] = ${VAR || '""'}`;
+        const code = `variables[${NAME}] = ${VAR || '""'}`;
         return `${code}\n`;
     })
 
@@ -36,17 +34,15 @@ function register() {
         message0: 'get %1',
         args0: [
             {
-                "type": "field_input",
-                "name": "NAME",
-                "value": "variable",
-                "spellcheck": false
+                "type": "input_value",
+                "name": "NAME"
             }
         ],
         output: null,
         inputsInline: true,
         colour: categoryColor
     }, (block) => {
-        const NAME = block.getFieldValue('NAME')
+        const NAME = javascriptGenerator.valueToCode(block, 'NAME', javascriptGenerator.ORDER_ATOMIC);
         return [`variables["${NAME}"]`, javascriptGenerator.ORDER_ATOMIC];
     })
 }

@@ -76,7 +76,7 @@ function register() {
         return [`(${X || 0} > ${Y || 0})`, javascriptGenerator.ORDER_ATOMIC];
     })
 
-    // x > y
+    // x < y
     registerBlock(`${categoryPrefix}less`, {
         message0: '%1 < %2',
         args0: [
@@ -169,7 +169,7 @@ function register() {
 
         return [`!${X || false}`, javascriptGenerator.ORDER_ATOMIC];
     })
-    
+
     // join x y
     registerBlock(`${categoryPrefix}join`, {
         message0: 'join %1 %2',
@@ -184,13 +184,107 @@ function register() {
             }
         ],
         output: "String",
+        return [`(${String(X) || ''} + ${String(Y) || ''})`, javascriptGenerator.ORDER_ATOMIC];
+    })
+
+    // x + y
+    registerBlock(`${categoryPrefix}add`, {
+        message0: '%1 + %2',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "Number"
+            },
+            {
+                "type": "input_value",
+                "name": "Y",
+                "check": "Number"
+            }
+        ],
+        output: "Number",
         inputsInline: true,
         colour: categoryColor
     }, (block) => {
         const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
         const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
 
-        return [`(${String(X) || ''} + ${String(Y) || ''})`, javascriptGenerator.ORDER_ATOMIC];
+        return [`(${X || 0} + ${Y || 0})`, javascriptGenerator.ORDER_ATOMIC];
+    })
+
+    // x - y
+    registerBlock(`${categoryPrefix}minus`, {
+        message0: '%1 - %2',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "Number"
+            },
+            {
+                "type": "input_value",
+                "name": "Y",
+                "check": "Number"
+            }
+        ],
+        output: "Number",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
+
+        return [`(${X || 0} - ${Y || 0})`, javascriptGenerator.ORDER_ATOMIC];
+    })
+
+    // x * y
+    registerBlock(`${categoryPrefix}multiply`, {
+        message0: '%1 * %2',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "Number"
+            },
+            {
+                "type": "input_value",
+                "name": "Y",
+                "check": "Number"
+            }
+        ],
+        output: "Number",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
+
+        return [`(${X || 0} * ${Y || 0})`, javascriptGenerator.ORDER_ATOMIC];
+    })
+
+    // x / y
+    registerBlock(`${categoryPrefix}divide`, {
+        message0: '%1 ÷ %2',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "Number"
+            },
+            {
+                "type": "input_value",
+                "name": "Y",
+                "check": "Number"
+            }
+        ],
+        output: "Number",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
+
+        return [`(${X || 0} / ${Y || 1})`, javascriptGenerator.ORDER_ATOMIC];
     })
 }
 

@@ -20,6 +20,11 @@
         <block type="literals_color" />
     </category>
     <category name="Operators" colour="#59C059">
+        <block type="operators_add" />
+        <block type="operators_minus" />
+        <block type="operators_multiply" />
+        <block type="operators_divide" />
+        <sep gap="48"></sep>
         <block type="operators_equals" />
         <block type="operators_strictequals" />
         <block type="operators_more" />
