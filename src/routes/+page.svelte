@@ -115,13 +115,6 @@
     let projectID = "";
     let lastGeneratedCode = "";
 
-    import pkg from '@blockly/workspace-minimap';
-    const { PositionedMinimap } = pkg;
-    document.addEventListener("DOMContentLoaded", function(event) {
-        const minimap = new PositionedMinimap(workspace);
-        minimap.init();
-    });
-
     const extensionImageStates = {
         icon: {
             failed: false,
@@ -161,6 +154,9 @@
         );
         lastGeneratedCode = code;
     }
+
+    import pkg from '@blockly/workspace-minimap';
+    const { PositionedMinimap } = pkg;
     onMount(() => {
         console.log("ignore the warnings above we dont care about those");
 
@@ -173,6 +169,9 @@
         EventManager.on(EventManager.EVENT_THEME_CHANGED, () => {
             workspace.refreshTheme();
         });
+
+        const minimap = new PositionedMinimap(workspace);
+        minimap.init();
     });
 
     let fileMenu;
