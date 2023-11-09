@@ -22,7 +22,7 @@ function register() {
         colour: categoryColor,
     }, (block) => {
         const SOUND = block.getFieldValue('SOUND')
-        const code = `doSound(\`${encodeURIComponent(SOUND)}\`, vm.targets.find(target => target.isStage));`;
+        const code = `doSound(\`${encodeURIComponent(SOUND)}\`, Scratch.vm.targets.find(target => target.isStage));`;
         return `${code}\n`;
     })
 }
