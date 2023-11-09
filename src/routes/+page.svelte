@@ -513,7 +513,7 @@
                     >
                         Copy
                     </StyledButton>
-                    <div style="margin-right: 12px" />
+                    <div style="margin-right: 4px" />
                     <StyledButton
                         on:click={() => {
                             // download
@@ -531,7 +531,7 @@
                     >
                         Download
                     </StyledButton>
-                    <div style="margin-right: 24px" />
+                    <div style="margin-right: 8px" />
                     <StyledButton
                         on:click={() => {
                             window.open("https://turbowarp.org/editor?extension=" + encodeURI("data:text/plain;base64," + btoa(lastGeneratedCode)), '_blank').focus();
@@ -539,7 +539,7 @@
                     >
                         TurboWarp Test
                     </StyledButton>
-                    <div style="margin-right: 12px" />
+                    <div style="margin-right: 4px" />
                     <StyledButton
                         on:click={() => {
                             window.open("https://studio.penguinmod.com/editor?extension=" + encodeURI("data:text/plain;base64," + btoa(lastGeneratedCode)), '_blank').focus();
