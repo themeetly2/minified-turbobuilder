@@ -531,6 +531,15 @@
                     >
                         Download
                     </StyledButton>
+                    <StyledButton
+                        on:click={() => {
+                            
+
+                            window.open("https://turbowarp.org/editor?extension=" + encodeURI("data:text/plain;base64," + btoa(lastGeneratedCode)), '_blank').focus();
+                        }}
+                    >
+                        Test in TurboWarp
+                    </StyledButton>
                 </div>
                 <div class="codeWrapper">
                     <div class="codeDisplay">
