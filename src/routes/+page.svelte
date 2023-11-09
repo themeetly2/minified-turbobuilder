@@ -55,6 +55,7 @@
     import registerSensing from "../resources/blocks/sensing.js";
     import registerLiterals from "../resources/blocks/literals.js";
     import registerOperators from "../resources/blocks/operators.js";
+    import registerVariables from "../resources/blocks/variables.js";
     import registerDebug from "../resources/blocks/debug.js";
     
     registerCore();
@@ -62,6 +63,7 @@
     registerSensing();
     registerLiterals();
     registerOperators();
+    registerVariables();
     registerDebug();
 
     const en = {
