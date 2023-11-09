@@ -1,6 +1,5 @@
 import javascriptGenerator from '../javascriptGenerator';
 import registerBlock from '../register';
-import { compileVars } from '../compiler/compileVarSection.js'
 
 const categoryPrefix = 'sound_';
 const categoryColor = '#CF63CF';
@@ -24,12 +23,7 @@ function register() {
     }, (block) => {
         const SOUND = block.getFieldValue('SOUND')
         const jarble = compileVars.new()
-        const code = `var ${jarble} = new Audio(\`${encodeURI(SOUND)}\`);
-        ${jarble}.style.display = "none";
-        window.document.body.appendChild(${jarble});
-        ${jarble}.addEventListener("canplaythrough", (event) => {
-            ${jarble}.play();
-        });`;
+        const code = `playSound(\`${encodeURIComponent(SOUND)}\`, vm.targets.find(target => target.isStage));`;
         return `${code}\n`;
     })
 }
