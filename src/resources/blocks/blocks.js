@@ -8,7 +8,7 @@ const categoryColor = '#FF6680';
 function register() {
     // create dem blocks!!!
     registerBlock(`${categoryPrefix}create`, {
-        message0: 'create block %1 id: %2 text: %3 type: %4 inputs: %5 %6 function: %7 %8',
+        message0: 'create block %1 id: %2 %3 text: %4 %5 type: %6 %7 inputs: %8 %9 function: %10 %11',
         args0: [
             {
                 "type": "input_dummy"
@@ -20,10 +20,16 @@ function register() {
                 "spellcheck": false
             },
             {
+                "type": "input_dummy"
+            },
+            {
                 "type": "field_input",
                 "name": "TEXT",
                 "value": "text",
                 "spellcheck": false
+            },
+            {
+                "type": "input_dummy"
             },
             {
                 "type": "field_dropdown",
@@ -33,6 +39,9 @@ function register() {
                     [ "reporter", "REPORTER" ],
                     [ "boolean", "BOOLEAN" ],
                 ]
+            },
+            {
+                "type": "input_dummy"
             },
             {
                 "type": "input_dummy"
