@@ -1,7 +1,7 @@
 import javascriptGenerator from '../javascriptGenerator';
 import registerBlock from '../register';
 
-const categoryPrefix = 'variables_';
+const categoryPrefix = 'variable_';
 const categoryColor = '#FF8C1A';
 
 function register() {

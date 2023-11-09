@@ -29,9 +29,9 @@
         <block type="operators_or" />
         <block type="operators_not" />
     </category>
-    <category name="Variables" colour="#59C059">
-        <block type="variables_set" />
-        <block type="variables_get" />
+    <category name="Variables" colour="#FF8C1A">
+        <block type="variable_set" />
+        <block type="variable_get" />
     </category>
     <sep></sep>
     <category name="Debug" colour="#666666">
