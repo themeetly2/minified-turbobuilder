@@ -190,7 +190,7 @@ function register() {
         const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
         const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
 
-        return [`(${String(X) || ''} + ${String(Y) || ''})`, javascriptGenerator.ORDER_ATOMIC];
+        return [`\`(${String(X) || ''}\` + \`${String(Y) || ''}\`)`, javascriptGenerator.ORDER_ATOMIC];
     })
 
     // x + y
