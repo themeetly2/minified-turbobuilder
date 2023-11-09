@@ -1,7 +1,7 @@
 import javascriptGenerator from '../javascriptGenerator';
 
 const start = `
-const vm = null
+let vm = null
 function doSound(ab, cd) {
 if (vm === null) return
 const audioEngine = vm.runtime.audioEngine;
