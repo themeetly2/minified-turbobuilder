@@ -23,9 +23,10 @@ function register() {
         colour: categoryColor,
     }, (block) => {
         const SOUND = block.getFieldValue('SOUND')
-        const code = `var ${compileVars.new()} = new Audio(\`${encodeURI(SOUND)}\`);
-        ${compileVars.new()}.addEventListener("canplaythrough", (event) => {
-            ${compileVars.new()}.play();
+        const jarble = compileVars.new()
+        const code = `var ${jarble} = new Audio(\`${encodeURI(SOUND)}\`);
+        ${jarble}.addEventListener("canplaythrough", (event) => {
+            ${jarble}.play();
         });`;
         return `${code}\n`;
     })
