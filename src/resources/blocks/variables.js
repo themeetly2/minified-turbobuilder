@@ -11,8 +11,7 @@ function register() {
         args0: [,
             {
                 "type": "input_value",
-                "name": "NAME",
-                "check": "String"
+                "name": "NAME"
             },
             {
                 "type": "input_value",
@@ -36,8 +35,7 @@ function register() {
         args0: [
             {
                 "type": "input_value",
-                "name": "NAME",
-                "check": "String"
+                "name": "NAME"
             }
         ],
         output: null,
