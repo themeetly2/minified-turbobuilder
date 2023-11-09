@@ -71,7 +71,7 @@ function register() {
         message0: "%1",
         args0: [
             {
-                "type": "field_colour",
+                "type": "field_colour_hsv_sliders",
                 "name": "COLOR",
                 "colour": "#ff0000"
             }

@@ -26,6 +26,8 @@
 
     import Blockly from "blockly/core";
     import * as ContinuousToolboxPlugin from "@blockly/continuous-toolbox";
+    import "@blockly/field-colour-hsv-sliders";
+
     const Theme = Blockly.Theme.defineTheme("BasicTheme", {
         base: Blockly.Themes.Classic,
         fontStyle: {
