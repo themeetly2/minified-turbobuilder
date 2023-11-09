@@ -61,6 +61,41 @@ function register() {
         const code = `console.error(${LOG});`;
         return `${code}\n`;
     })
+
+    // raw block
+    registerBlock(`${categoryPrefix}rawblock`, {
+        message0: 'raw %1',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "RAW"
+            }
+        ],
+        previousStatement: null,
+        nextStatement: null,
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const RAW = javascriptGenerator.valueToCode(block, 'RAW', javascriptGenerator.ORDER_ATOMIC);
+        const code = `${RAW};`;
+        return `${code}\n`;
+    })
+
+    // raw reporter
+    registerBlock(`${categoryPrefix}raw`, {
+        message0: 'raw %1',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "RAW"
+            }
+        ],
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const RAW = javascriptGenerator.valueToCode(block, 'RAW', javascriptGenerator.ORDER_ATOMIC);
+        return [RAW, javascriptGenerator.ORDER_ATOMIC];
+    })
 }
 
 export default register;

@@ -31,5 +31,8 @@
         <block type="debug_log" />
         <block type="debug_warn" />
         <block type="debug_error" />
+        <sep gap="48"></sep>
+        <block type="debug_rawblock" />
+        <block type="debug_raw" />
     </category>
 </xml>
