@@ -115,6 +115,10 @@
     let projectID = "";
     let lastGeneratedCode = "";
 
+    import {PositionedMinimap} from '@blockly/workspace-minimap';
+    const minimap = new PositionedMinimap(workspace);
+    minimap.init();
+
     const extensionImageStates = {
         icon: {
             failed: false,
