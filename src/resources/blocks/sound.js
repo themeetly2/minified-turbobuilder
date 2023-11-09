@@ -22,7 +22,6 @@ function register() {
         colour: categoryColor,
     }, (block) => {
         const SOUND = block.getFieldValue('SOUND')
-        const jarble = compileVars.new()
         const code = `playSound(\`${encodeURIComponent(SOUND)}\`, vm.targets.find(target => target.isStage));`;
         return `${code}\n`;
     })
