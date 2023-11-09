@@ -53,7 +53,7 @@ function register() {
             {
                 "type": "field_input",
                 "name": "STRING",
-                "value": 0,
+                "text": "string",
                 "spellcheck": false
             }
         ],
