@@ -537,7 +537,7 @@
                             window.open("https://turbowarp.org/editor?extension=" + encodeURI("data:text/plain;base64," + btoa(lastGeneratedCode)), '_blank').focus();
                         }}
                     >
-                        TurboWarp Test
+                        TurboWarp
                     </StyledButton>
                     <div style="margin-right: 4px" />
                     <StyledButton
@@ -545,7 +545,7 @@
                             window.open("https://studio.penguinmod.com/editor?extension=" + encodeURI("data:text/plain;base64," + btoa(lastGeneratedCode)), '_blank').focus();
                         }}
                     >
-                        PenguinMod Test
+                        PenguinMod
                     </StyledButton>
                 </div>
                 <div class="codeWrapper">
