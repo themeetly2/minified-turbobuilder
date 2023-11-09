@@ -33,6 +33,8 @@
         <block type="operators_minus" />
         <block type="operators_multiply" />
         <block type="operators_divide" />
+        <sep gap="48"></sep>
+        <block type="operators_join" />
     </category>
     <category name="Variables" colour="#FF8C1A">
         <block type="variable_set" />

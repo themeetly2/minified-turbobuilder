@@ -170,6 +170,29 @@ function register() {
         return [`!${X || false}`, javascriptGenerator.ORDER_ATOMIC];
     })
 
+    // join x y
+    registerBlock(`${categoryPrefix}join`, {
+        message0: 'join %1 %2',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X"
+            },
+            {
+                "type": "input_value",
+                "name": "Y"
+            }
+        ],
+        output: "String",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
+
+        return [`\`(${String(X) || ''}\` + \`${String(Y) || ''}\`)`, javascriptGenerator.ORDER_ATOMIC];
+    })
+
     // x + y
     registerBlock(`${categoryPrefix}add`, {
         message0: '%1 + %2',
