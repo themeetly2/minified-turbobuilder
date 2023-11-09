@@ -28,6 +28,11 @@
         <block type="operators_and" />
         <block type="operators_or" />
         <block type="operators_not" />
+        <sep gap="48"></sep>
+        <block type="operators_add" />
+        <block type="operators_minus" />
+        <block type="operators_multiply" />
+        <block type="operators_divide" />
     </category>
     <category name="Variables" colour="#FF8C1A">
         <block type="variable_set" />
