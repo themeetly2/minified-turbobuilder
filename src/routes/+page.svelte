@@ -404,13 +404,13 @@
                     Edit Extension Colors
                 </StyledButton>
                 <div style="margin-left:8px" />
-                <StyledButton
+                <!--<StyledButton
                     on:click={() => {
                         CreateBlockModalScript.open();
                     }}
                 >
                     Create an Extension Block
-                </StyledButton>
+                </StyledButton> wont need this since im changing the system -->
                 <div style="margin-left:8px" />
                 <div class="extensionMenuPreview">
                     <div style="text-align: center;">
