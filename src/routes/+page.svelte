@@ -52,11 +52,14 @@
 
     import registerCore from "../resources/blocks/core.js";
     import registerControl from "../resources/blocks/control.js";
+    import registerSensing from "../resources/blocks/sensing.js";
     import registerLiterals from "../resources/blocks/literals.js";
     import registerOperators from "../resources/blocks/operators.js";
     import registerDebug from "../resources/blocks/debug.js";
+    
     registerCore();
     registerControl();
+    registerSensing();
     registerLiterals();
     registerOperators();
     registerDebug();
