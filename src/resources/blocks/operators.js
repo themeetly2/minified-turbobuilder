@@ -176,11 +176,13 @@ function register() {
         args0: [
             {
                 "type": "input_value",
-                "name": "X"
+                "name": "X",
+                "checks": "String"
             },
             {
                 "type": "input_value",
-                "name": "Y"
+                "name": "Y",
+                "checks": "String"
             }
         ],
         output: "String",
@@ -190,7 +192,7 @@ function register() {
         const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
         const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
 
-        return [`(\`${String(X) || ''}\` + \`${String(Y) || ''}\`)`, javascriptGenerator.ORDER_ATOMIC];
+        return [`(${String(X) || ''} + ${String(Y) || ''})`, javascriptGenerator.ORDER_ATOMIC];
     })
 
     // x + y

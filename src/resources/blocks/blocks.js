@@ -123,7 +123,7 @@ function register() {
         
         const code = `"${ID}": {
             type: Scratch.ArgumentType.${TYPE}, ${DEFAULT ? `
-            default: ${DEFAULT},`: ''}
+            defaultValue: ${DEFAULT},`: ''}
         }`;
         return `${code}\n`;
     })
