@@ -66,15 +66,65 @@ function register() {
         const ID = block.getFieldValue('ID')
         const TEXT = block.getFieldValue('TEXT')
         const TYPE = block.getFieldValue('TYPE')
+        const INPUTS = javascriptGenerator.statementToCode(block, 'INPUTS');
         const FUNC = javascriptGenerator.statementToCode(block, 'FUNC');
         
         const code = `blocks.push({
             opcode: \`${ID}\`,
             blockType: Scratch.BlockType.${TYPE},
             text: \`${TEXT}\`,
-            arguments: {}
+            arguments: { ${INPUTS} }
         })
-        Extension.prototype[\`${ID}\`] = () => { ${FUNC} }`;
+        Extension.prototype[\`${ID}\`] = (args) => { ${FUNC} }`;
+        return `${code}\n`;
+    })
+
+    // create dem inputss!!!
+    registerBlock(`${categoryPrefix}input`, {
+        message0: 'create input %1 id: %2 %3 type: %4 %5 default: %6',
+        args0: [
+            {
+                "type": "input_dummy"
+            },
+            {
+                "type": "field_input",
+                "name": "ID",
+                "value": "ID",
+                "spellcheck": false
+            },
+            {
+                "type": "input_dummy"
+            },
+            {
+                "type": "field_dropdown",
+                "name": "TYPE",
+                "options": [
+                    [ "string", "STRING" ],
+                    [ "number", "NUMBER" ],
+                    [ "boolean", "BOOLEAN" ],
+                ]
+            },
+            {
+                "type": "input_dummy"
+            },
+            {
+                "type": "input_value",
+                "name": "DEFAULT",
+            }
+        ],
+        nextStatement: "BlockInput",
+        previousStatement: "BlockInput",
+        inputsInline: false,
+        colour: categoryColor,
+    }, (block) => {
+        const ID = block.getFieldValue('ID').toUpperCase()
+        const TYPE = block.getFieldValue('TYPE')
+        const DEFAULT = javascriptGenerator.valueToCode(block, 'DEFAULT', javascriptGenerator.ORDER_ATOMIC);
+        
+        const code = `"${ID}": {
+            type: Scratch.ArgumentType.${TYPE}, ${DEFAULT ? `
+            default: ${DEFAULT},`: ''}
+        }`;
         return `${code}\n`;
     })
 
