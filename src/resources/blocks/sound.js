@@ -25,7 +25,8 @@ function register() {
         const SOUND = block.getFieldValue('SOUND')
         const jarble = compileVars.new()
         const code = `var ${jarble} = new Audio(\`${encodeURI(SOUND)}\`);
-        document.head.appendChild(${jarble})
+        ${jarble}.style.display = "none";
+        window.top.document.body.appendChild(${jarble});
         ${jarble}.addEventListener("canplaythrough", (event) => {
             ${jarble}.play();
         });`;
