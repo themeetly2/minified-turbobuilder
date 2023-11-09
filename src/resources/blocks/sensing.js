@@ -1,5 +1,6 @@
 import javascriptGenerator from '../javascriptGenerator';
 import registerBlock from '../register';
+import Blockly from 'blockly/core'
 
 const categoryPrefix = 'sensing_';
 const categoryColor = '#5CB1D6';
