@@ -25,7 +25,7 @@ function register() {
         const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
         const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
 
-        return [`${X || 0} == ${Y || 0}`, javascriptGenerator.ORDER_ATOMIC];
+        return [`(${X || 0} == ${Y || 0})`, javascriptGenerator.ORDER_ATOMIC];
     })
 
     // x === y
@@ -48,7 +48,7 @@ function register() {
         const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
         const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
 
-        return [`${X || 0} === ${Y || 0}`, javascriptGenerator.ORDER_ATOMIC];
+        return [`(${X || 0} === ${Y || 0})`, javascriptGenerator.ORDER_ATOMIC];
     })
 
     // x > y
@@ -73,7 +73,7 @@ function register() {
         const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
         const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
 
-        return [`${X || 0} > ${Y || 0}`, javascriptGenerator.ORDER_ATOMIC];
+        return [`(${X || 0} > ${Y || 0})`, javascriptGenerator.ORDER_ATOMIC];
     })
 
     // x > y
@@ -98,7 +98,7 @@ function register() {
         const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
         const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
 
-        return [`${X || 0} < ${Y || 0}`, javascriptGenerator.ORDER_ATOMIC];
+        return [`(${X || 0} < ${Y || 0})`, javascriptGenerator.ORDER_ATOMIC];
     })
 
     // x and y
@@ -123,7 +123,7 @@ function register() {
         const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
         const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
 
-        return [`${X || false} && ${Y || false}`, javascriptGenerator.ORDER_ATOMIC];
+        return [`(${X || false} && ${Y || false})`, javascriptGenerator.ORDER_ATOMIC];
     })
 
     // x or y
@@ -148,7 +148,7 @@ function register() {
         const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
         const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
 
-        return [`${X || false} || ${Y || false}`, javascriptGenerator.ORDER_ATOMIC];
+        return [`(${X || false} || ${Y || false})`, javascriptGenerator.ORDER_ATOMIC];
     })
 
     // not x
