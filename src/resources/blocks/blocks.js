@@ -128,6 +128,25 @@ function register() {
         return `${code}\n`;
     })
 
+    // get input
+    registerBlock(`${categoryPrefix}get`, {
+        message0: 'get %1',
+        args0: [
+            {
+                "type": "field_input",
+                "name": "NAME",
+                "value": "INPUTID",
+                "spellcheck": false
+            }
+        ],
+        output: null,
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const NAME = block.getFieldValue('NAME')
+        return [`args["${NAME}"]`, javascriptGenerator.ORDER_ATOMIC];
+    })
+
     // return
     registerBlock(`${categoryPrefix}return`, {
         message0: 'return %1',
