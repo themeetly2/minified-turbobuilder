@@ -56,6 +56,7 @@
     import registerLiterals from "../resources/blocks/literals.js";
     import registerOperators from "../resources/blocks/operators.js";
     import registerVariables from "../resources/blocks/variables.js";
+    import registerBlocks from "../resources/blocks/blocks.js";
     import registerDebug from "../resources/blocks/debug.js";
     
     registerCore();
@@ -64,6 +65,7 @@
     registerLiterals();
     registerOperators();
     registerVariables();
+    registerBlocks();
     registerDebug();
 
     const en = {

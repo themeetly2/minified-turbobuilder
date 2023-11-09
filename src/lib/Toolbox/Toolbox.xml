@@ -34,6 +34,9 @@
         <block type="variable_get" />
     </category>
     <sep></sep>
+    <category name="Blocks" colour="#FF6680">
+        <block type="blocks_return" />
+    </category>
     <category name="Debug" colour="#666666">
         <block type="debug_log" />
         <block type="debug_warn" />
