@@ -8,7 +8,7 @@ const categoryColor = '#FF6680';
 function register() {
     // return
     registerBlock(`${categoryPrefix}return`, {
-        message0: 'return $1',
+        message0: 'return %1',
         args0: [
             {
                 "type": "input_value",
