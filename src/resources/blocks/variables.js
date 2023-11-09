@@ -27,7 +27,7 @@ function register() {
     }, (block) => {
         const NAME = block.getFieldValue('NAME')
         const VAR = javascriptGenerator.valueToCode(block, 'VAR', javascriptGenerator.ORDER_ATOMIC);
-        const code = `variables["${NAME}"] = ${VAR || ''}`;
+        const code = `variables["${NAME}"] = ${VAR || '""'}`;
         return `${code}\n`;
     })
 
