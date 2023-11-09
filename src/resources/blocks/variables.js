@@ -8,7 +8,7 @@ function register() {
     // set variable
     registerBlock(`${categoryPrefix}set`, {
         message0: 'set %1 to %2',
-        args0: [,
+        args0: [
             {
                 "type": "input_value",
                 "name": "NAME"
