@@ -1,9 +1,10 @@
 import javascriptGenerator from '../javascriptGenerator';
 
 const start = `
-console.log(Scratch)
+const vm = null
 function doSound(ab, cd) {
-const audioEngine = Scratch.vm.runtime.audioEngine;
+if (vm === null) return
+const audioEngine = vm.runtime.audioEngine;
 
 const fetchAsArrayBufferWithTimeout = (url) =>
   new Promise((resolve, reject) => {

@@ -75,7 +75,7 @@ function register() {
             text: \`${TEXT}\`,
             arguments: { ${INPUTS} }
         })
-        Extension.prototype[\`${ID}\`] = (args, util) => { ${FUNC} }`;
+        Extension.prototype[\`${ID}\`] = (args, util) => { vm = util; ${FUNC} }`;
         return `${code}\n`;
     })
 
