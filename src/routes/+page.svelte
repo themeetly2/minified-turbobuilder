@@ -117,8 +117,10 @@
 
     import pkg from '@blockly/workspace-minimap';
     const { PositionedMinimap } = pkg;
-    const minimap = new PositionedMinimap(workspace);
-    minimap.init();
+    document.addEventListener("DOMContentLoaded", function(event) {
+        const minimap = new PositionedMinimap(workspace);
+        minimap.init();
+    });
 
     const extensionImageStates = {
         icon: {
