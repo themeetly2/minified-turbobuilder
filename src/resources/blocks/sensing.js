@@ -32,7 +32,9 @@ function register() {
     }, (block) => {
         const KEY = block.getFieldValue('KEY')
         const BLOCKS = javascriptGenerator.statementToCode(block, 'BLOCKS');
-        const code = `document.addEventListener("keypress", event => { if (event.key == '${KEY}') { ${BLOCKS} } );`;
+        const code = `document.addEventListener("keypress", event => {
+            if (event.key == '${KEY}') { ${BLOCKS} }
+        );`;
         return `${code}\n`;
     })
 }

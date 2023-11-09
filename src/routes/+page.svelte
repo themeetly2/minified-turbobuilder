@@ -367,7 +367,7 @@
 {/if}
 <NavigationBar>
     <NavigationButton on:click={downloadProject}>Save</NavigationButton>
-    <NavigationButton on:click={loadProject}>Edit</NavigationButton>
+    <NavigationButton on:click={loadProject}>Load</NavigationButton>
     <NavigationDivider />
     <input
         class="project-name"
