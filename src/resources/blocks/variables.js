@@ -11,11 +11,12 @@ function register() {
         args0: [
             {
                 "type": "input_value",
-                "name": "NAME"
+                "name": "NAME",
+                "checks": "String"
             },
             {
                 "type": "input_value",
-                "name": "VAR",
+                "name": "VAR"
             }
         ],
         previousStatement: null,
@@ -35,7 +36,8 @@ function register() {
         args0: [
             {
                 "type": "input_value",
-                "name": "NAME"
+                "name": "NAME",
+                "checks": "String"
             }
         ],
         output: null,
