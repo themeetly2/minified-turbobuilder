@@ -73,6 +73,40 @@ function register() {
         return `${code}\n`;
     })
 
+    // if <> then () else ()
+    registerBlock(`${categoryPrefix}ifthenreturn`, {
+        message0: 'if %1 then %2 %3 else %4 %5',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "CONDITION",
+                "check": "Boolean"
+            },
+            {
+                "type": "input_dummy"
+            },
+            {
+                "type": "input_value",
+                "name": "X",
+            },
+            {
+                "type": "input_dummy"
+            },
+            {
+                "type": "input_value",
+                "name": "Y",
+            },
+        ],
+        output: null,
+        inputsInline: false,
+        colour: categoryColor
+    }, (block) => {
+        const CONDITION = javascriptGenerator.valueToCode(block, 'CONDITION', javascriptGenerator.ORDER_ATOMIC);
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
+        return [`(${CONDITION || false} ? (${X}) : (${Y}))`, javascriptGenerator.ORDER_ATOMIC];
+    })
+
     // switch statement
     registerBlock(`${categoryPrefix}switch`, {
         message0: 'switch %1 %2 %3',

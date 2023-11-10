@@ -2,6 +2,7 @@
     <category name="Control" colour="#FFAB19">
         <block type="control_ifthen" />
         <block type="control_ifthenelse" />
+        <block type="control_ifthenreturn" />
         <sep gap="48"></sep>
         <block type="control_switch" />
         <block type="control_case" />
@@ -9,7 +10,7 @@
         <block type="control_break" />
     </category>
     <category name="Sound" colour="#CF63CF">
-        <block type="sound_startsound" />
+        <!--<block type="sound_startsound" />-->
     </category>
     <category name="Sensing" colour="#5CB1D6">
         <block type="sensing_keypress" />
