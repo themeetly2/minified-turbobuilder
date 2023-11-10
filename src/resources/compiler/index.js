@@ -148,9 +148,7 @@ class Compiler {
         const classRegistry = {
             top: [
                 `class Extension {`,
-                `constructor(runtime) {`,
-                `this.runtime = runtime`,
-                `}`
+                `constructor() {`
             ],
             extensionInfo: {},
             bottom: [
