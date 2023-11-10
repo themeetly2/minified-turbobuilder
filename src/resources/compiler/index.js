@@ -147,8 +147,7 @@ class Compiler {
         ];
         const classRegistry = {
             top: [
-                `class Extension {`,
-                `constructor() {`
+                `class Extension {`
             ],
             extensionInfo: {},
             bottom: [
