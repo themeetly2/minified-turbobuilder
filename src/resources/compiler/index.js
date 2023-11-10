@@ -1,10 +1,8 @@
 import javascriptGenerator from '../javascriptGenerator';
 
 const start = `
-let vm = null
 function doSound(ab, cd) {
-if (vm === null) return
-const audioEngine = vm.runtime.audioEngine;
+const audioEngine = this.runtime.audioEngine;
 
 const fetchAsArrayBufferWithTimeout = (url) =>
   new Promise((resolve, reject) => {
@@ -149,7 +147,10 @@ class Compiler {
         ];
         const classRegistry = {
             top: [
-                `class Extension {`
+                `class Extension {`,
+                `constructor(runtime) {
+                  this.runtime = runtime
+                }`
             ],
             extensionInfo: {},
             bottom: [
