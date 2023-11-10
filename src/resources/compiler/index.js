@@ -142,13 +142,14 @@ class Compiler {
             `const variables = {};`,
             `const blocks = [];`,
             `const menus = [];`,
+            ``,
+            start
         ];
         const classRegistry = {
             top: [
                 `class Extension {`,
                 `constructor(runtime) {`,
                 `this.runtime = runtime`,
-                start,
                 `}`
             ],
             extensionInfo: {},
