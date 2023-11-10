@@ -75,7 +75,7 @@ function register() {
 
     // if <> then () else ()
     registerBlock(`${categoryPrefix}ifthenreturn`, {
-        message0: 'if %1 then %2 %3 else %4 %5',
+        message0: 'if %1 then %2 else %3',
         args0: [
             {
                 "type": "input_value",
@@ -83,14 +83,8 @@ function register() {
                 "check": "Boolean"
             },
             {
-                "type": "input_dummy"
-            },
-            {
                 "type": "input_value",
                 "name": "X",
-            },
-            {
-                "type": "input_dummy"
             },
             {
                 "type": "input_value",
