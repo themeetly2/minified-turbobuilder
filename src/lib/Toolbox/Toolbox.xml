@@ -10,10 +10,10 @@
         <block type="control_break" />
     </category>
     <category name="Sound" colour="#CF63CF">
-        <!--<block type="sound_startsound" />-->
+        <block type="sound_startsound" />
     </category>
     <category name="Sensing" colour="#5CB1D6">
-        <block type="sensing_keypress" />
+        <!--<block type="sensing_keypress" />-->
     </category>
     <category name="Literals" colour="#59C08E">
         <block type="literals_true" />
