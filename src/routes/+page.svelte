@@ -51,8 +51,10 @@
     registerGeneric();
 
     import registerCore from "../resources/blocks/core.js";
+    import registerEvents from "../resources/blocks/events.js";
     import registerControl from "../resources/blocks/control.js";
     import registerSensing from "../resources/blocks/sensing.js";
+    import registerSound from "../resources/blocks/sound.js";
     import registerLiterals from "../resources/blocks/literals.js";
     import registerOperators from "../resources/blocks/operators.js";
     import registerVariables from "../resources/blocks/variables.js";
@@ -61,6 +63,8 @@
     
     registerCore();
     registerControl();
+    registerEvents();
+    registerSound();
     registerSensing();
     registerLiterals();
     registerOperators();
@@ -530,22 +534,6 @@
                         }}
                     >
                         Download
-                    </StyledButton>
-                    <div style="margin-right: 8px" />
-                    <StyledButton
-                        on:click={() => {
-                            window.open("https://turbowarp.org/editor?extension=" + encodeURI("data:text/plain;base64," + btoa(lastGeneratedCode)), '_blank').focus();
-                        }}
-                    >
-                        TurboWarp
-                    </StyledButton>
-                    <div style="margin-right: 4px" />
-                    <StyledButton
-                        on:click={() => {
-                            window.open("https://studio.penguinmod.com/editor?extension=" + encodeURI("data:text/plain;base64," + btoa(lastGeneratedCode)), '_blank').focus();
-                        }}
-                    >
-                        PenguinMod
                     </StyledButton>
                 </div>
                 <div class="codeWrapper">

@@ -16,7 +16,7 @@ function register() {
             {
                 "type": "field_input",
                 "name": "ID",
-                "value": "id",
+                "text": "id",
                 "spellcheck": false
             },
             {
@@ -25,7 +25,7 @@ function register() {
             {
                 "type": "field_input",
                 "name": "TEXT",
-                "value": "text",
+                "text": "text",
                 "spellcheck": false
             },
             {
@@ -75,7 +75,7 @@ function register() {
             text: \`${TEXT}\`,
             arguments: { ${INPUTS} }
         })
-        Extension.prototype[\`${ID}\`] = (args) => { ${FUNC} }`;
+        Extension.prototype[\`${ID}\`] = (args, util) => { vm = util; console.log(util); ${FUNC} }`;
         return `${code}\n`;
     })
 
@@ -89,7 +89,7 @@ function register() {
             {
                 "type": "field_input",
                 "name": "ID",
-                "value": "ID",
+                "text": "ID",
                 "spellcheck": false
             },
             {
@@ -135,7 +135,7 @@ function register() {
             {
                 "type": "field_input",
                 "name": "NAME",
-                "value": "INPUTID",
+                "text": "INPUTID",
                 "spellcheck": false
             }
         ],

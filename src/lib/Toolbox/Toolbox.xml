@@ -1,16 +1,26 @@
 <xml>
+    <category name="Events" colour="#FFBF00">
+        <block type="events_interval" />
+        <block type="events_timeout" />
+    </category>
     <category name="Control" colour="#FFAB19">
         <block type="control_ifthen" />
         <block type="control_ifthenelse" />
+        <block type="control_ifthenreturn" />
         <sep gap="48"></sep>
         <block type="control_switch" />
         <block type="control_case" />
         <block type="control_default" />
         <block type="control_break" />
     </category>
+    <category name="Sound" colour="#CF63CF">
+        <block type="sound_startsound" />
+    </category>
     <category name="Sensing" colour="#5CB1D6">
+        <!--
         <block type="sensing_keypress" />
         <sep gap="48"></sep>
+        -->
         <block type="sensing_alert" />
         <block type="sensing_prompt" />
         <block type="sensing_confirm" />
@@ -19,6 +29,7 @@
         <block type="literals_true" />
         <block type="literals_false" />
         <sep gap="48"></sep>
+        <block type="literals_null" />
         <block type="literals_number" />
         <block type="literals_string" />
         <block type="literals_color" />

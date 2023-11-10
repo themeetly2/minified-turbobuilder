@@ -46,6 +46,17 @@ function register() {
         return [NUMBER, javascriptGenerator.ORDER_ATOMIC];
     })
 
+    // null
+    registerBlock(`${categoryPrefix}null`, {
+        message0: 'null',
+        args0: [],
+        output: "Null",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        return ['null', javascriptGenerator.ORDER_ATOMIC];
+    })
+
     // string
     registerBlock(`${categoryPrefix}string`, {
         message0: "'%1'",
@@ -53,7 +64,7 @@ function register() {
             {
                 "type": "field_input",
                 "name": "STRING",
-                "value": 0,
+                "text": "string",
                 "spellcheck": false
             }
         ],
