@@ -142,8 +142,6 @@ class Compiler {
             `const variables = {};`,
             `const blocks = [];`,
             `const menus = [];`,
-            ``,
-            start
         ];
         const classRegistry = {
             top: [
