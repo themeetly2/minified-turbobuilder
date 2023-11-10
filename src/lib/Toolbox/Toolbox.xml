@@ -18,6 +18,7 @@
         <block type="literals_true" />
         <block type="literals_false" />
         <sep gap="48"></sep>
+        <block type="literals_null" />
         <block type="literals_number" />
         <block type="literals_string" />
         <block type="literals_color" />
