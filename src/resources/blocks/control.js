@@ -98,7 +98,7 @@ function register() {
         const CONDITION = javascriptGenerator.valueToCode(block, 'CONDITION', javascriptGenerator.ORDER_ATOMIC);
         const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
         const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
-        return [`(${CONDITION || false} ? (${X}) : (${Y}))`, javascriptGenerator.ORDER_ATOMIC];
+        return [`(${CONDITION || false} ? ${X} : ${Y})`, javascriptGenerator.ORDER_ATOMIC];
     })
 
     // switch statement

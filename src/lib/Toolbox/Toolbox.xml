@@ -1,4 +1,7 @@
 <xml>
+    <category name="Events" colour="#FFBF00">
+        <block type="events_interval" />
+    </category>
     <category name="Control" colour="#FFAB19">
         <block type="control_ifthen" />
         <block type="control_ifthenelse" />

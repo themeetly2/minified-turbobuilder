@@ -51,6 +51,7 @@
     registerGeneric();
 
     import registerCore from "../resources/blocks/core.js";
+    import registerEvents from "../resources/blocks/events.js";
     import registerControl from "../resources/blocks/control.js";
     import registerSensing from "../resources/blocks/sensing.js";
     import registerSound from "../resources/blocks/sound.js";
@@ -62,6 +63,7 @@
     
     registerCore();
     registerControl();
+    registerEvents();
     registerSound();
     registerSensing();
     registerLiterals();
