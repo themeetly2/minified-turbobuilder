@@ -51,6 +51,12 @@
         <sep gap="48"></sep>
         <block type="operators_join" />
     </category>
+    <category name="Conversions" colour="#8BC059">
+        <block type="conversions_tonumber" />
+        <block type="conversions_tostring" />
+        <sep gap="48"></sep>
+        <block type="conversions_time" />
+    </category>
     <category name="Variables" colour="#FF8C1A">
         <block type="variable_set" />
         <block type="variable_get" />
