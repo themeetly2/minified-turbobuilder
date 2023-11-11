@@ -54,24 +54,24 @@ function register() {
                 "type": "field_dropdown",
                 "name": "MENU1",
                 "options": [
-                    [ "milliseconds", 1 ],
-                    [ "seconds", 1000 ],
-                    [ "minutes", 60000 ],
-                    [ "hours", 3600000 ],
-                    [ "days", 86400000 ],
+                    [ "milliseconds", "1" ],
+                    [ "seconds", "1000" ],
+                    [ "minutes", "60000" ],
+                    [ "hours", "3600000" ],
+                    [ "days", "86400000" ],
                 ]
             },
             {
                 "type": "field_dropdown",
-                "name": "MENU2",
+                "name": "MENU1",
                 "options": [
-                    [ "milliseconds", 1 ],
-                    [ "seconds", 1000 ],
-                    [ "minutes", 60000 ],
-                    [ "hours", 3600000 ],
-                    [ "days", 86400000 ],
+                    [ "milliseconds", "1" ],
+                    [ "seconds", "1000" ],
+                    [ "minutes", "60000" ],
+                    [ "hours", "3600000" ],
+                    [ "days", "86400000" ],
                 ]
-            },
+            }
         ],
         output: "Number",
         inputsInline: true,
