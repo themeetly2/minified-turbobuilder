@@ -74,8 +74,8 @@ function register() {
             blockType: Scratch.BlockType.${TYPE},
             text: \`${TEXT}\`,
             arguments: { ${INPUTS} }
-        })
-        Extension.prototype[\`${ID}\`] = (args, util) => { vm = util; console.log(util); ${FUNC} }`;
+        });
+        Extension.prototype[\`${ID}\`] = (args, util) => { ${FUNC} };`;
         return `${code}\n`;
     })
 
