@@ -37,59 +37,6 @@ function register() {
         });`;
         return `${code}\n`;
     })
-
-    // alert
-    registerBlock(`${categoryPrefix}alert`, {
-        message0: 'alert %1',
-        args0: [
-            {
-                "type": "input_value",
-                "name": "ALERT"
-            }
-        ],
-        previousStatement: null,
-        nextStatement: null,
-        inputsInline: true,
-        colour: categoryColor
-    }, (block) => {
-        const ALERT = javascriptGenerator.valueToCode(block, 'ALERT', javascriptGenerator.ORDER_ATOMIC);
-        const code = `alert(${ALERT || '""'})`;
-        return `${code}\n`;
-    })
-    
-    // confirm
-    registerBlock(`${categoryPrefix}confirm`, {
-        message0: 'confirm %1',
-        args0: [
-            {
-                "type": "input_value",
-                "name": "ALERT"
-            }
-        ],
-        output: "Boolean",
-        inputsInline: true,
-        colour: categoryColor
-    }, (block) => {
-        const ALERT = javascriptGenerator.valueToCode(block, 'ALERT', javascriptGenerator.ORDER_ATOMIC);
-        return [`confirm(${ALERT || '""'})`, javascriptGenerator.ORDER_ATOMIC];
-    })
-    
-    // prompt
-    registerBlock(`${categoryPrefix}prompt`, {
-        message0: 'prompt %1',
-        args0: [
-            {
-                "type": "input_value",
-                "name": "ALERT"
-            }
-        ],
-        output: "String",
-        inputsInline: true,
-        colour: categoryColor
-    }, (block) => {
-        const ALERT = javascriptGenerator.valueToCode(block, 'ALERT', javascriptGenerator.ORDER_ATOMIC);
-        return [`prompt(${ALERT || '""'})`, javascriptGenerator.ORDER_ATOMIC];
-    })
 }
 
 Blockly.Extensions.register('single_character_validation', function() {
