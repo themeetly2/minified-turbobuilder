@@ -90,6 +90,17 @@ function register() {
         const ALERT = javascriptGenerator.valueToCode(block, 'ALERT', javascriptGenerator.ORDER_ATOMIC);
         return [`prompt(${ALERT || '""'})`, javascriptGenerator.ORDER_ATOMIC];
     })
+    
+    // time
+    registerBlock(`${categoryPrefix}time`, {
+        message0: 'time (ms) since 1970',
+        args0: [],
+        output: "Number",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        return [`Date.now()`, javascriptGenerator.ORDER_ATOMIC];
+    })
 }
 
 Blockly.Extensions.register('single_character_validation', function() {

@@ -24,6 +24,8 @@
         <block type="sensing_alert" />
         <block type="sensing_prompt" />
         <block type="sensing_confirm" />
+        <sep gap="48"></sep>
+        <block type="sensing_time" />
     </category>
     <category name="Literals" colour="#59C08E">
         <block type="literals_true" />
