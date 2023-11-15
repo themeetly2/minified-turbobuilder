@@ -66,6 +66,9 @@
     <category name="Variables" colour="#FF8C1A">
         <block type="variable_set" />
         <block type="variable_get" />
+        <sep gap="48"></sep>
+        <block type="variable_setls" />
+        <block type="variable_getls" />
     </category>
     <sep></sep>
     <category name="Blocks" colour="#FF6680">
