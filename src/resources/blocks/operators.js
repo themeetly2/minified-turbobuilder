@@ -335,7 +335,7 @@ function register() {
                 "check": "String"
             }
         ],
-        output: "Number",
+        output: "String",
         inputsInline: true,
         colour: categoryColor
     }, (block) => {
@@ -343,6 +343,31 @@ function register() {
         const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
 
         return [`(${Y}.split("")[${X}-1])`, javascriptGenerator.ORDER_ATOMIC];
+    })
+
+    // random int
+    registerBlock(`${categoryPrefix}randomint`, {
+        message0: 'random int from %1 to %2',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "Number"
+            },
+            {
+                "type": "input_value",
+                "name": "Y",
+                "check": "Number"
+            }
+        ],
+        output: "Number",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
+
+        return [`Math.floor(Math.random()*(${Y} - ${X} + 1) + ${X})`, javascriptGenerator.ORDER_ATOMIC];
     })
 }
 

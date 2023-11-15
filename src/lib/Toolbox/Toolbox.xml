@@ -52,6 +52,8 @@
         <block type="operators_divide" />
         <block type="operators_power" />
         <sep gap="48"></sep>
+        <block type="operators_randomint" />
+        <sep gap="48"></sep>
         <block type="operators_join" />
         <block type="operators_letter" />
     </category>
