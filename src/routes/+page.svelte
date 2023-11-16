@@ -60,6 +60,7 @@
     import registerConversions from "../resources/blocks/conversions.js";
     import registerVariables from "../resources/blocks/variables.js";
     import registerBlocks from "../resources/blocks/blocks.js";
+    import registerFunctions from "../resources/blocks/functions.js";
     import registerDebug from "../resources/blocks/debug.js";
     
     registerCore();
@@ -72,6 +73,7 @@
     registerConversions();
     registerVariables();
     registerBlocks();
+    registerFunctions();
     registerDebug();
 
     const en = {
