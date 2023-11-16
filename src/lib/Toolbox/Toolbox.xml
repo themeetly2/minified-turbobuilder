@@ -78,6 +78,13 @@
         <block type="blocks_get" />
         <block type="blocks_return" />
     </category>
+    <category name="Functions" colour="#5531D6">
+        <block type="functions_create" />
+        <block type="functions_return" />
+        <sep gap="48"></sep>
+        <block type="functions_call" />
+        <block type="functions_callreporter" />
+    </category>
     <category name="Debug" colour="#666666">
         <block type="debug_log" />
         <block type="debug_warn" />
