@@ -70,6 +70,9 @@
         <block type="variable_setls" />
         <block type="variable_getls" />
     </category>
+    <category name="JSON" colour="#FF661A">
+        <block type="json_validate" />
+    </category>
     <sep></sep>
     <category name="Blocks" colour="#FF6680">
         <block type="blocks_create" />

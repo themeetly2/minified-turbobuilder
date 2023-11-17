@@ -59,6 +59,7 @@
     import registerOperators from "../resources/blocks/operators.js";
     import registerConversions from "../resources/blocks/conversions.js";
     import registerVariables from "../resources/blocks/variables.js";
+    import registerJSON from "../resources/blocks/json.js";
     import registerBlocks from "../resources/blocks/blocks.js";
     import registerFunctions from "../resources/blocks/functions.js";
     import registerDebug from "../resources/blocks/debug.js";
@@ -72,6 +73,7 @@
     registerOperators();
     registerConversions();
     registerVariables();
+    registerJSON();
     registerBlocks();
     registerFunctions();
     registerDebug();
