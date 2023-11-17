@@ -28,13 +28,14 @@
         <block type="sensing_time" />
     </category>
     <category name="Literals" colour="#59C08E">
+        <block type="literals_null" />
         <block type="literals_true" />
         <block type="literals_false" />
-        <sep gap="48"></sep>
-        <block type="literals_null" />
         <block type="literals_number" />
         <block type="literals_string" />
         <block type="literals_color" />
+        <block type="literals_array" />
+        <block type="literals_object" />
     </category>
     <category name="Operators" colour="#59C059">
         <block type="operators_equals" />

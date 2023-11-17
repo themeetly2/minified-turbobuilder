@@ -95,6 +95,28 @@ function register() {
 
         return ["'" + COLOR + "'", javascriptGenerator.ORDER_ATOMIC];
     })
+
+    // array
+    registerBlock(`${categoryPrefix}array`, {
+        message0: "blank array",
+        args0: [],
+        output: "JSONArray",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        return ["[]", javascriptGenerator.ORDER_ATOMIC];
+    })
+
+    // object
+    registerBlock(`${categoryPrefix}object`, {
+        message0: "blank object",
+        args0: [],
+        output: "JSONObject",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        return ["{}", javascriptGenerator.ORDER_ATOMIC];
+    })
 }
 
 export default register;
