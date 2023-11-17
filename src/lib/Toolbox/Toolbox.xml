@@ -73,6 +73,8 @@
     </category>
     <category name="JSON" colour="#FF661A">
         <block type="json_validate" />
+        <block type="json_tojson" />
+        <block type="json_tostring" />
     </category>
     <sep></sep>
     <category name="Blocks" colour="#FF6680">
