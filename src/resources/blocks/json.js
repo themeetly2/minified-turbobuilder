@@ -73,7 +73,7 @@ function register() {
                 "check": "JSONArray"
             },
         ],
-        output: "String",
+        output: "JSONArray",
         inputsInline: true,
         colour: categoryColor
     }, (block) => {
@@ -97,7 +97,7 @@ function register() {
                 "check": "JSONArray"
             },
         ],
-        output: "String",
+        output: null,
         inputsInline: true,
         colour: categoryColor
     }, (block) => {
