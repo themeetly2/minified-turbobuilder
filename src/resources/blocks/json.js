@@ -19,7 +19,7 @@ function register() {
         inputsInline: true,
         colour: categoryColor
     }, (block) => {
-        const INPUT = block.getFieldValue('INPUT')
+        const INPUT = javascriptGenerator.valueToCode(block, 'INPUT', javascriptGenerator.ORDER_ATOMIC);
         return [`(() => { try { JSON.parse(${INPUT}); return true; } catch { return false; } })()`, javascriptGenerator.ORDER_ATOMIC];
     })
 
@@ -37,7 +37,7 @@ function register() {
         inputsInline: true,
         colour: categoryColor
     }, (block) => {
-        const INPUT = block.getFieldValue('INPUT')
+        const INPUT = javascriptGenerator.valueToCode(block, 'INPUT', javascriptGenerator.ORDER_ATOMIC);
         return [`(() => { try { return JSON.parse(${INPUT}); } catch { return false; } })()`, javascriptGenerator.ORDER_ATOMIC];
     })
 
@@ -55,7 +55,7 @@ function register() {
         inputsInline: true,
         colour: categoryColor
     }, (block) => {
-        const INPUT = block.getFieldValue('INPUT')
+        const INPUT = javascriptGenerator.valueToCode(block, 'INPUT', javascriptGenerator.ORDER_ATOMIC);
         return [`JSON.stringify(${INPUT})`, javascriptGenerator.ORDER_ATOMIC];
     })
 
@@ -77,8 +77,8 @@ function register() {
         inputsInline: true,
         colour: categoryColor
     }, (block) => {
-        const X = block.getFieldValue('X')
-        const Y = block.getFieldValue('Y')
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
         return [`(${X}.push(${Y}))`, javascriptGenerator.ORDER_ATOMIC];
     })
 
@@ -101,8 +101,8 @@ function register() {
         inputsInline: true,
         colour: categoryColor
     }, (block) => {
-        const X = block.getFieldValue('X')
-        const Y = block.getFieldValue('Y')
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
         return [`(${X}[${Y}])`, javascriptGenerator.ORDER_ATOMIC];
     })
 }
