@@ -99,6 +99,26 @@ function register() {
         const RAW = block.getFieldValue('RAW')
         return [RAW, javascriptGenerator.ORDER_ATOMIC];
     })
+
+    // raw reporter
+    registerBlock(`${categoryPrefix}test`, {
+        message0: '%1 %2',
+        args0: [
+            {
+                "type": "input_dummy"
+            },
+            {
+                "type": "input_statement",
+                "name": "BLOCKS"
+            }
+        ],
+        output: null,
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const RAW = block.getFieldValue('RAW')
+        return [RAW, javascriptGenerator.ORDER_ATOMIC];
+    })
 }
 
 export default register;

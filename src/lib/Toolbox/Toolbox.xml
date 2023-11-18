@@ -102,5 +102,6 @@
         <sep gap="48"></sep>
         <block type="debug_rawblock" />
         <block type="debug_raw" />
+        <block type="debug_test" />
     </category>
 </xml>
