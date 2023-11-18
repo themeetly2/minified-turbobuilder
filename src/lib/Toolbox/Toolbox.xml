@@ -90,6 +90,8 @@
     </category>
     <category name="Functions" colour="#5531D6">
         <block type="functions_create" />
+        <block type="functions_inline" />
+        <sep gap="48"></sep>
         <block type="functions_return" />
         <sep gap="48"></sep>
         <block type="functions_call" />

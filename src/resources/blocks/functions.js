@@ -34,6 +34,28 @@ function register() {
         return `${code}\n`;
     })
 
+    // inline function
+    registerBlock(`${categoryPrefix}inline`, {
+        message0: 'inline function %1 %2',
+        args0: [
+            {
+                "type": "input_dummy"
+            },
+            {
+                "type": "input_statement",
+                "name": "FUNC"
+            }
+        ],
+        output: null,
+        inputsInline: true,
+        colour: categoryColor,
+    }, (block) => {
+        const FUNC = javascriptGenerator.statementToCode(block, 'FUNC');
+        
+        const code = `(() => { ${FUNC} })`;
+        return `${code}\n`;
+    })
+
     // return
     registerBlock(`${categoryPrefix}return`, {
         message0: 'return %1',
