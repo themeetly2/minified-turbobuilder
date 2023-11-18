@@ -73,7 +73,8 @@ function register() {
             opcode: \`${ID}\`,
             blockType: Scratch.BlockType.${TYPE},
             text: \`${TEXT}\`,
-            arguments: { ${INPUTS} }
+            arguments: { ${INPUTS} },
+            disableMonitor: true
         });
         Extension.prototype[\`${ID}\`] = (args, util) => { ${FUNC} };`;
         return `${code}\n`;
