@@ -35,6 +35,8 @@
         <block type="literals_string" />
         <block type="literals_color" />
         <block type="literals_array" />
+        <sep gap="8"></sep>
+        <block type="literals_arraylength" />
         <block type="literals_object" />
     </category>
     <category name="Operators" colour="#59C059">
@@ -79,6 +81,7 @@
         <block type="json_arrayinsert" />
         <sep gap="48"></sep>
         <block type="json_arrayget" />
+        <block type="json_arraylength" />
     </category>
     <sep></sep>
     <category name="Blocks" colour="#FF6680">
