@@ -103,7 +103,25 @@ function register() {
     }, (block) => {
         const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
         const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
-        return [`(${X}[${Y}])`, javascriptGenerator.ORDER_ATOMIC];
+        return [`${X}[${Y}]`, javascriptGenerator.ORDER_ATOMIC];
+    })
+
+    // get
+    registerBlock(`${categoryPrefix}arraylength`, {
+        message0: 'length of array %1',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "JSONArray"
+            },
+        ],
+        output: "Number",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        return [`${X}.length`, javascriptGenerator.ORDER_ATOMIC];
     })
 }
 

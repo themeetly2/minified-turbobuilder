@@ -106,6 +106,22 @@ function register() {
     }, (block) => {
         return ["[]", javascriptGenerator.ORDER_ATOMIC];
     })
+    registerBlock(`${categoryPrefix}arraylength`, {
+        message0: "array of length %1",
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "Number"
+            },
+        ],
+        output: "JSONArray",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        return [`Array(${X || 0})`, javascriptGenerator.ORDER_ATOMIC];
+    })
 
     // object
     registerBlock(`${categoryPrefix}object`, {
