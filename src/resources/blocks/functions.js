@@ -51,7 +51,7 @@ function register() {
         colour: categoryColor,
     }, (block) => {
         const FUNC = javascriptGenerator.statementToCode(block, 'FUNC');
-        return [`(() => { ${FUNC} })`, javascriptGenerator.ORDER_ATOMIC];
+        return [`(() => { ${FUNC} })()`, javascriptGenerator.ORDER_ATOMIC];
     })
 
     // return
