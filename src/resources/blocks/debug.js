@@ -115,8 +115,8 @@ function register() {
         inputsInline: true,
         colour: categoryColor
     }, (block) => {
-        const COMMENT = javascriptGenerator.valueToCode(block, 'COMMENT', javascriptGenerator.ORDER_ATOMIC);
-        const code = `console.error(${LOG});`;
+        const COMMENT = block.getFieldValue('COMMENT')
+        const code = `// ${Comment}`;
         return `${code}\n`;
     })
 
