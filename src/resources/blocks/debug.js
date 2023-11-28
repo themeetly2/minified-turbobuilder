@@ -139,7 +139,7 @@ function register() {
     }, (block) => {
         const BLOCKS = javascriptGenerator.statementToCode(block, 'BLOCKS');
         const code = `/*
-        ${BLOCKS}*/;`;
+${BLOCKS}*/;`;
         return `${code}\n`;
     })
 }
