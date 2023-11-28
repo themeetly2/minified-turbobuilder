@@ -79,6 +79,7 @@
         <block type="json_tostring" />
         <sep gap="64"></sep>
         <block type="json_arrayinsert" />
+        <block type="json_arrayset" />
         <sep gap="48"></sep>
         <block type="json_arrayget" />
         <block type="json_arraylength" />

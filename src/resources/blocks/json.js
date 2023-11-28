@@ -82,6 +82,35 @@ function register() {
         return [`(${X || "[]"}.push(${Y || '""'}))`, javascriptGenerator.ORDER_ATOMIC];
     })
 
+    // set
+    registerBlock(`${categoryPrefix}arrayset`, {
+        message0: 'set %1 to %2 in %3',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "Number"
+            },
+            {
+                "type": "input_value",
+                "name": "Y",
+            },
+            {
+                "type": "input_value",
+                "name": "Z",
+                "check": "JSONArray"
+            },
+        ],
+        output: "JSONArray",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
+        const Z = javascriptGenerator.valueToCode(block, 'Z', javascriptGenerator.ORDER_ATOMIC);
+        return [`(() => { var z = ${Z}; z[${X}] = ${Y}; return z })()`, javascriptGenerator.ORDER_ATOMIC];
+    })
+
     // get
     registerBlock(`${categoryPrefix}arrayget`, {
         message0: 'get %1 from array %2',
