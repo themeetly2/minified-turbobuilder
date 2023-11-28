@@ -108,5 +108,8 @@
         <sep gap="48"></sep>
         <block type="debug_rawblock" />
         <block type="debug_raw" />
+        <sep gap="48"></sep>
+        <block type="debug_comment" />
+        <block type="debug_commentstack" />
     </category>
 </xml>

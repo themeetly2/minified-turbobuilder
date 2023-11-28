@@ -99,6 +99,49 @@ function register() {
         const RAW = block.getFieldValue('RAW')
         return [RAW, javascriptGenerator.ORDER_ATOMIC];
     })
+
+    // comment
+    registerBlock(`${categoryPrefix}comment`, {
+        message0: '// %1',
+        args0: [
+            {
+                "type": "field_input",
+                "name": "COMMENT",
+                "spellcheck": false
+            }
+        ],
+        previousStatement: null,
+        nextStatement: null,
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const COMMENT = javascriptGenerator.valueToCode(block, 'COMMENT', javascriptGenerator.ORDER_ATOMIC);
+        const code = `console.error(${LOG});`;
+        return `${code}\n`;
+    })
+
+    // comment
+    registerBlock(`${categoryPrefix}commentstack`, {
+        message0: '/* %1 %2 */',
+        args0: [
+            {
+                "type": "input_dummy"
+            },
+            {
+                "type": "input_statement",
+                "name": "BLOCKS"
+            }
+        ],
+        previousStatement: null,
+        nextStatement: null,
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const BLOCKS = javascriptGenerator.statementToCode(block, 'BLOCKS');
+        const code = `/*
+        ${BLOCKS}*/;`;
+        return `${code}\n`;
+    })
 }
 
 export default register;
