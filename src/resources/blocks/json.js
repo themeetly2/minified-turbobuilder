@@ -111,6 +111,30 @@ function register() {
         return [`(() => { var z = ${Z}; z[${X}] = ${Y}; return z })()`, javascriptGenerator.ORDER_ATOMIC];
     })
 
+    // merge
+    registerBlock(`${categoryPrefix}arraymerge`, {
+        message0: 'merge array %1 with %2',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "JSONArray"
+            },
+            {
+                "type": "input_value",
+                "name": "Y",
+                "check": "JSONArray"
+            },
+        ],
+        output: "JSONArray",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
+        return [`${X}.concat(${Y})`, javascriptGenerator.ORDER_ATOMIC];
+    })
+
     // get
     registerBlock(`${categoryPrefix}arrayget`, {
         message0: 'get %1 from array %2',

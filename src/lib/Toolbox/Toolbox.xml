@@ -80,6 +80,7 @@
         <sep gap="64"></sep>
         <block type="json_arrayinsert" />
         <block type="json_arrayset" />
+        <block type="json_arraymerge" />
         <sep gap="48"></sep>
         <block type="json_arrayget" />
         <block type="json_arraylength" />
