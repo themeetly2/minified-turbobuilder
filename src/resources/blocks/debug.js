@@ -142,6 +142,26 @@ function register() {
 ${BLOCKS}*/;`;
         return `${code}\n`;
     })
+
+    // code ran?
+    registerBlock(`${categoryPrefix}catch`, {
+        message0: 'code finished successfully? (runs code)',
+        args0: [
+            {
+                "type": "input_dummy"
+            },
+            {
+                "type": "input_statement",
+                "name": "FUNC"
+            }
+        ],
+        output: "Boolean",
+        inputsInline: true,
+        colour: categoryColor,
+    }, (block) => {
+        const FUNC = javascriptGenerator.statementToCode(block, 'FUNC');
+        return [`(() => { try { ${FUNC} return true; } catch { return false; } })()`, javascriptGenerator.ORDER_ATOMIC];
+    })
 }
 
 export default register;
