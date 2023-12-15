@@ -9,6 +9,7 @@
     export let color3 = "#0000ff";
 
     let color3Included = false;
+    export let tbShow = true;
 
     const dispatch = createEventDispatcher();
 
@@ -24,6 +25,7 @@
             color1,
             color2,
             color3,
+            tbShow
         });
     }
     function cancel() {
@@ -92,12 +94,28 @@
                 <div
                     style="display:flex;flex-direction:row;align-items:center;"
                 >
+                    <label>
+                        TurboBuilder Indicator (PenguinMod Experimental Feature)
+                        <input type="checkbox" bind:checked={tbShow} />
+                    </label>
+                </div>
+                <div
+                    style="display:flex;flex-direction:row;align-items:center;"
+                >
                     <div class="extensionMenuPreview">
                         <div style="text-align: center;">
                             <div
                                 class="extensionBubbleIcon"
                                 style={`background: ${color1}; border-color: ${color2}`}
-                            />
+                            >
+                                {#if tbShow}
+                                    <img
+                                        class="tbBubbleIcon"
+                                        src="favicon.png"
+                                        alt="TurboBuilder"
+                                    />
+                                {/if}
+                            </div>
                             <div class="extensionBubbleName">Extension</div>
                         </div>
                     </div>
@@ -247,8 +265,8 @@
 
     .extensionMenuPreview {
         width: 60px;
+        position: relative;
         cursor: pointer;
-        overflow: hidden;
         color: #575e75;
         user-select: none;
     }
@@ -259,6 +277,18 @@
     .extensionMenuPreview:active {
         background-color: #e9eef2;
     }
+
+    .tbBubbleIcon {
+        width: 16px;
+        height: 16px;
+        background: #0006;
+        backdrop-filter: blur(2px);
+        border-radius: 8px;
+        position: absolute;
+        top: -3px;
+        right: -3px;
+    }
+
     :global(body.dark) .extensionMenuPreview {
         color: #ccc;
     }
@@ -273,6 +303,7 @@
         border-radius: 100%;
         margin: 0 auto 0.125rem;
         border: 1px rgba(0, 0, 0, 0.2) solid;
+        position: relative;
     }
     .extensionBubbleName {
         font-size: 0.65rem;

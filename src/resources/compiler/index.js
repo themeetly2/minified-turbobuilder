@@ -186,6 +186,9 @@ class Compiler {
             if (extensionMetadata.color3) {
                 classRegistry.extensionInfo.color3 = extensionMetadata.color3;
             }
+            if (extensionMetadata.tbShow) {
+                classRegistry.extensionInfo.tbShow = extensionMetadata.tbShow;
+            }
         }
 
         return [].concat(headerCode, classRegistry.top, [

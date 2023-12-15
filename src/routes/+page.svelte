@@ -153,6 +153,7 @@
         color1: "#0088ff",
         color2: "#0063ba",
         color3: "",
+        tbShow: true
     };
 
     function updateGeneratedCode() {
@@ -363,11 +364,13 @@
         color1={extensionMetadata.color1}
         color2={extensionMetadata.color2}
         color3={extensionMetadata.color3}
+        tbShow={extensionMetadata.tbShow}
         on:completed={(colors) => {
             ModalState.extensionColors = false;
             extensionMetadata.color1 = colors.detail.color1;
             extensionMetadata.color2 = colors.detail.color2;
             extensionMetadata.color3 = colors.detail.color3;
+            extensionMetadata.tbShow = colors.detail.tbShow;
             updateGeneratedCode();
         }}
         on:cancel={() => {
