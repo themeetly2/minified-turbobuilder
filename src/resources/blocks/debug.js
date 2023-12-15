@@ -145,7 +145,7 @@ ${BLOCKS}*/;`;
 
     // code ran?
     registerBlock(`${categoryPrefix}catch`, {
-        message0: 'code finished successfully? (runs code)',
+        message0: 'code finished successfully? (runs code) %1 %2',
         args0: [
             {
                 "type": "input_dummy"
