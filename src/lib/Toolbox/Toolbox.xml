@@ -84,6 +84,12 @@
         <sep gap="48"></sep>
         <block type="json_arrayget" />
         <block type="json_arraylength" />
+        <sep gap="64"></sep>
+        <block type="json_objectset" />
+        <sep gap="48"></sep>
+        <block type="json_objectget" />
+        <block type="json_objectkeys" />
+        <block type="json_objectvalues" />
     </category>
     <sep></sep>
     <category name="Blocks" colour="#FF6680">

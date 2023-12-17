@@ -84,7 +84,7 @@ function register() {
 
     // set
     registerBlock(`${categoryPrefix}arrayset`, {
-        message0: 'set %1 to %2 in %3',
+        message0: 'set %1 to %2 in array %3',
         args0: [
             {
                 "type": "input_value",
@@ -175,6 +175,95 @@ function register() {
     }, (block) => {
         const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
         return [`${X || "[]"}.length`, javascriptGenerator.ORDER_ATOMIC];
+    })
+
+    // set
+    registerBlock(`${categoryPrefix}objectset`, {
+        message0: 'set %1 to %2 in object %3',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "String"
+            },
+            {
+                "type": "input_value",
+                "name": "Y",
+            },
+            {
+                "type": "input_value",
+                "name": "Z",
+                "check": "JSONObject"
+            },
+        ],
+        output: "JSONObject",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
+        const Z = javascriptGenerator.valueToCode(block, 'Z', javascriptGenerator.ORDER_ATOMIC);
+        return [`(() => { var z = ${Z}; z[${X}] = ${Y}; return z })()`, javascriptGenerator.ORDER_ATOMIC];
+    })
+
+    // get
+    registerBlock(`${categoryPrefix}objectget`, {
+        message0: 'get %1 from object %2',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "String"
+            },
+            {
+                "type": "input_value",
+                "name": "Y",
+                "check": "JSONObject"
+            },
+        ],
+        output: null,
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
+        return [`${X || "{}"}[${Y || 0}]`, javascriptGenerator.ORDER_ATOMIC];
+    })
+
+    // keys
+    registerBlock(`${categoryPrefix}objectkeys`, {
+        message0: 'keys of object %1',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "JSONObject"
+            },
+        ],
+        output: "JSONArray",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        return [`Object.keys(${X})`, javascriptGenerator.ORDER_ATOMIC];
+    })
+
+    // values
+    registerBlock(`${categoryPrefix}objectvalues`, {
+        message0: 'values of object %1',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "JSONObject"
+            },
+        ],
+        output: "JSONArray",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        return [`Object.values(${X})`, javascriptGenerator.ORDER_ATOMIC];
     })
 }
 
