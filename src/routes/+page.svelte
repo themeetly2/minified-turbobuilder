@@ -352,6 +352,10 @@
     const ModalState = {
         extensionColors: false,
     };
+
+    function discordInvite() {
+        window.open("https://discord.gg/eVQdK8csJc")
+    }
 </script>
 
 <CreateBlockModal
@@ -380,6 +384,8 @@
     />
 {/if}
 <NavigationBar>
+    <NavigationButton on:click={discordInvite}>Discord</NavigationButton>
+    <NavigationDivider />
     <NavigationButton on:click={downloadProject}>Save</NavigationButton>
     <NavigationButton on:click={loadProject}>Load</NavigationButton>
     <NavigationDivider />
