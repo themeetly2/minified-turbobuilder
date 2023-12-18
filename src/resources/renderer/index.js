@@ -89,6 +89,7 @@ class CustomConstantProvider extends Blockly.zelos.ConstantProvider {
         const maxHeight = maxWidth * 2;
 
         function makeMainPath(blockHeight, up, right) {
+            const remainingHeight = blockHeight > maxHeight ? blockHeight - maxHeight : 0;
             const height = blockHeight > maxHeight ? maxHeight : blockHeight;
             const radius = height / 2;
             return (
@@ -100,6 +101,7 @@ class CustomConstantProvider extends Blockly.zelos.ConstantProvider {
                 ) +
                 Blockly.utils.svgPaths.lineOnAxis('h', (right ? .5 : -.5) * radius) +
                 Blockly.utils.svgPaths.lineOnAxis('v', (up ? -1 : 1) * radius) +
+                Blockly.utils.svgPaths.lineOnAxis('v', (right ? 1 : -1) * remainingHeight) +
                 Blockly.utils.svgPaths.lineOnAxis('h', (right ? -.5 : .5) * radius) +
                 Blockly.utils.svgPaths.arc(
                     'a',
