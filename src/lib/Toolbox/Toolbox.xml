@@ -4,6 +4,11 @@
         <block type="events_timeout" />
     </category>
     <category name="Control" colour="#FFAB19">
+        <block type="control_wait" />
+        <block type="control_waituntil" />
+        <sep gap="48"></sep>
+        <block type="control_repeat" />
+        <sep gap="48"></sep>
         <block type="control_ifthen" />
         <block type="control_ifthenelse" />
         <block type="control_ifthenreturn" />

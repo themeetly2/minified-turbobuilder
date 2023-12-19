@@ -1,3 +1,4 @@
+import { compileVars } from '../compiler/compileVarSection';
 import javascriptGenerator from '../javascriptGenerator';
 import registerBlock from '../register';
 
@@ -5,6 +6,75 @@ const categoryPrefix = 'control_';
 const categoryColor = '#FFAB19';
 
 function register() {
+    // wait in milliseconds
+    registerBlock(`${categoryPrefix}wait`, {
+        message0: 'wait %1 (ms)',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "MS",
+                "check": "Number"
+            }
+        ],
+        previousStatement: null,
+        nextStatement: null,
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const MS = javascriptGenerator.valueToCode(block, 'MS', javascriptGenerator.ORDER_ATOMIC);
+        const code = `await new Promise(resolve => setTimeout(resolve, ${MS}))`;
+        return `${code}\n`;
+    })
+
+    // wait until
+    registerBlock(`${categoryPrefix}waituntil`, {
+        message0: 'wait until %1',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "CONDITION",
+                "check": "Boolean"
+            }
+        ],
+        previousStatement: null,
+        nextStatement: null,
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const CONDITION = javascriptGenerator.valueToCode(block, 'CONDITION', javascriptGenerator.ORDER_ATOMIC);
+        const code = `await new Promise(resolve => { let x = setInterval(() => { if (${CONDITION}) { clearInterval(x); resolve() } }, 50) })`;
+        return `${code}\n`;
+    })
+
+    // repeat x amount of times
+    registerBlock(`${categoryPrefix}repeat`, {
+        message0: 'repeat %1 %2 %3',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "TIMES",
+                "check": "Number"
+            },
+            {
+                "type": "input_dummy"
+            },
+            {
+                "type": "input_statement",
+                "name": "BLOCKS"
+            }
+        ],
+        previousStatement: null,
+        nextStatement: null,
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const TIMES = javascriptGenerator.valueToCode(block, 'TIMES', javascriptGenerator.ORDER_ATOMIC);
+        const BLOCKS = javascriptGenerator.statementToCode(block, 'BLOCKS');
+        const variable = compileVars.new()
+        const code = `for (var ${variable} = 0; ${variable} < ${TIMES}; ${variable}++) { ${BLOCKS} }`;
+        return `${code}\n`;
+    })
+
     // if <> then {}
     registerBlock(`${categoryPrefix}ifthen`, {
         message0: 'if %1 then %2 %3',

@@ -63,7 +63,7 @@ function register() {
             },
             {
                 "type": "field_dropdown",
-                "name": "MENU1",
+                "name": "MENU2",
                 "options": [
                     [ "milliseconds", "1" ],
                     [ "seconds", "1000" ],

@@ -76,7 +76,7 @@ function register() {
             arguments: { ${INPUTS} },
             disableMonitor: true
         });
-        Extension.prototype[\`${ID}\`] = (args, util) => { ${FUNC} };`;
+        Extension.prototype[\`${ID}\`] = async (args, util) => { ${FUNC} };`;
         return `${code}\n`;
     })
 

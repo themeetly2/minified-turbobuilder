@@ -27,7 +27,7 @@ function register() {
     }, (block) => {
         const TIME = javascriptGenerator.valueToCode(block, 'TIME', javascriptGenerator.ORDER_ATOMIC);
         const BLOCKS = javascriptGenerator.statementToCode(block, 'BLOCKS');
-        const code = `setInterval(() => { ${BLOCKS} }, (${TIME} * 1000));`;
+        const code = `setInterval(async () => { ${BLOCKS} }, (${TIME} * 1000));`;
         return `${code}\n`;
     })
     // setTimeout
@@ -54,7 +54,7 @@ function register() {
     }, (block) => {
         const TIME = javascriptGenerator.valueToCode(block, 'TIME', javascriptGenerator.ORDER_ATOMIC);
         const BLOCKS = javascriptGenerator.statementToCode(block, 'BLOCKS');
-        const code = `setTimeout(() => { ${BLOCKS} }, (${TIME} * 1000));`;
+        const code = `setTimeout(async () => { ${BLOCKS} }, (${TIME} * 1000));`;
         return `${code}\n`;
     })
 }

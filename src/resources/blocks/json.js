@@ -20,7 +20,7 @@ function register() {
         colour: categoryColor
     }, (block) => {
         const INPUT = javascriptGenerator.valueToCode(block, 'INPUT', javascriptGenerator.ORDER_ATOMIC);
-        return [`(() => { try { JSON.parse(${INPUT || '"{}"'}); return true; } catch { return false; } })()`, javascriptGenerator.ORDER_ATOMIC];
+        return [`await (async () => { try { JSON.parse(${INPUT || '"{}"'}); return true; } catch { return false; } })()`, javascriptGenerator.ORDER_ATOMIC];
     })
 
     // convert string to json
@@ -38,7 +38,7 @@ function register() {
         colour: categoryColor
     }, (block) => {
         const INPUT = javascriptGenerator.valueToCode(block, 'INPUT', javascriptGenerator.ORDER_ATOMIC);
-        return [`(() => { try { return JSON.parse(${INPUT || '"{}"'}); } catch { return false; } })()`, javascriptGenerator.ORDER_ATOMIC];
+        return [`await (async () => { try { return JSON.parse(${INPUT || '"{}"'}); } catch { return false; } })()`, javascriptGenerator.ORDER_ATOMIC];
     })
 
     // convert json to string
@@ -108,7 +108,7 @@ function register() {
         const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
         const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
         const Z = javascriptGenerator.valueToCode(block, 'Z', javascriptGenerator.ORDER_ATOMIC);
-        return [`(() => { var z = ${Z}; z[${X}] = ${Y}; return z })()`, javascriptGenerator.ORDER_ATOMIC];
+        return [`await (async () => { var z = ${Z}; z[${X}] = ${Y}; return z })()`, javascriptGenerator.ORDER_ATOMIC];
     })
 
     // merge
@@ -203,7 +203,7 @@ function register() {
         const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
         const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
         const Z = javascriptGenerator.valueToCode(block, 'Z', javascriptGenerator.ORDER_ATOMIC);
-        return [`(() => { var z = ${Z}; z[${X}] = ${Y}; return z })()`, javascriptGenerator.ORDER_ATOMIC];
+        return [`await (async () => { var z = ${Z}; z[${X}] = ${Y}; return z })()`, javascriptGenerator.ORDER_ATOMIC];
     })
 
     // get

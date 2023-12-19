@@ -138,7 +138,7 @@ class Compiler {
             `   This extension was made with TurboBuilder!`,
             `   https://turbobuilder-steel.vercel.app/`,
             `*/`,
-            `(function (Scratch) {`,
+            `(async function (Scratch) {`,
             `const variables = {};`,
             `const blocks = [];`,
             `const menus = [];`,

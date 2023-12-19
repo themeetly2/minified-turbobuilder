@@ -160,7 +160,7 @@ ${BLOCKS}*/;`;
         colour: categoryColor,
     }, (block) => {
         const FUNC = javascriptGenerator.statementToCode(block, 'FUNC');
-        return [`(() => { try { ${FUNC} return true; } catch { return false; } })()`, javascriptGenerator.ORDER_ATOMIC];
+        return [`await (async () => { try { ${FUNC} return true; } catch { return false; } })()`, javascriptGenerator.ORDER_ATOMIC];
     })
 }
 

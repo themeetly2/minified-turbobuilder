@@ -30,7 +30,7 @@ function register() {
         const ID = block.getFieldValue('ID')
         const FUNC = javascriptGenerator.statementToCode(block, 'FUNC');
         
-        const code = `function ${ID}() { ${FUNC} }`;
+        const code = `async function ${ID}() { ${FUNC} }`;
         return `${code}\n`;
     })
 
@@ -51,7 +51,7 @@ function register() {
         colour: categoryColor,
     }, (block) => {
         const FUNC = javascriptGenerator.statementToCode(block, 'FUNC');
-        return [`(() => { ${FUNC} })()`, javascriptGenerator.ORDER_ATOMIC];
+        return [`await (async () => { ${FUNC} })()`, javascriptGenerator.ORDER_ATOMIC];
     })
 
     // return
