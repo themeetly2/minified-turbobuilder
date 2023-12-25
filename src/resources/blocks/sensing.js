@@ -101,6 +101,28 @@ function register() {
     }, (block) => {
         return [`Date.now()`, javascriptGenerator.ORDER_ATOMIC];
     })
+    
+    // year
+    registerBlock(`${categoryPrefix}year`, {
+        message0: 'current year',
+        args0: [],
+        output: "Number",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        return [`(new Date(Date.now()).getFullYear())`, javascriptGenerator.ORDER_ATOMIC];
+    })
+    
+    // leap year or not
+    registerBlock(`${categoryPrefix}leapyear`, {
+        message0: 'is leap year?',
+        args0: [],
+        output: "Boolean",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        return [`((new Date(new Date(Date.now()).getYear(), 1, 29)).getDate() === 29)`, javascriptGenerator.ORDER_ATOMIC];
+    })
 }
 
 Blockly.Extensions.register('single_character_validation', function() {
