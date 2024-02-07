@@ -1,29 +1,9 @@
-import Blockly from "blockly/core"
-
 class CustomConstantProvider extends Blockly.zelos.ConstantProvider {
-    constructor() {
-        super();
-
-        this.SMALL_PADDING = 3
-        this.MEDIUM_PADDING = 5
-        this.MEDIUM_LARGE_PADDING = 7
-        this.LARGE_PADDING = 8
-
-        this.CORNER_RADIUS = 8
-
-        this.STATEMENT_INPUT_SPACER_MIN_WIDTH = 120
-
-        this.NOTCH_WIDTH = 15
-        this.NOTCH_HEIGHT = 4
-
-        this.FIELD_TEXT_FONTWEIGHT = 'bold';
-        this.FIELD_TEXT_FONTFAMILY = '"Source Code Pro", monospace';
-    }
-
     init() {
         super.init()
         this.ROUNDEL = this.makeRoundel()
         this.ROUNDEDINVERTED = this.makeRoundedInverted()
+        this.RHOMBUS = this.makeRhombus()
     }
 
     makeRoundedInverted() {
@@ -143,6 +123,58 @@ class CustomConstantProvider extends Blockly.zelos.ConstantProvider {
         };
     }
 
+    makeRhombus() {
+        const maxWidth = this.MAX_DYNAMIC_CONNECTION_SHAPE_WIDTH;
+
+        function makeMainPath(height, up, right) {
+            const halfHeight = height / 2;
+            const width = halfHeight > maxWidth ? maxWidth : halfHeight;
+            const forward = up ? -1 : 1;
+            const direction = right ? -1 : 1;
+            const dy = (forward * height) / 2;
+            return (
+                /*Blockly.utils.svgPaths.lineTo(-direction * width, dy) +
+                Blockly.utils.svgPaths.lineTo(direction * width, dy)*/
+                Blockly.utils.svgPaths.lineTo(0, dy * 0.58) +
+                Blockly.utils.svgPaths.lineTo(-direction * width * (1 - 0.5 / 0.7), dy * -0.28) +
+                Blockly.utils.svgPaths.lineTo(-direction * width * (0.5 / 0.7), dy * 0.7) +
+                Blockly.utils.svgPaths.lineTo(-direction * width * -(0.5 / 0.7), dy * 0.7) +
+                Blockly.utils.svgPaths.lineTo(-direction * width * -(1 - 0.5 / 0.7), dy * -0.28) + 
+                Blockly.utils.svgPaths.lineTo(0, dy * 0.58)
+            );
+        }
+
+        return {
+            type: this.SHAPES.HEXAGONAL,
+            isDynamic: true,
+            width(height) {
+                const halfHeight = height / 2;
+                return halfHeight > maxWidth ? maxWidth : halfHeight;
+            },
+            height(height) {
+                return height;
+            },
+            connectionOffsetY(connectionHeight) {
+                return connectionHeight / 2;
+            },
+            connectionOffsetX(connectionWidth) {
+                return -connectionWidth;
+            },
+            pathDown(height) {
+                return makeMainPath(height, false, false);
+            },
+            pathUp(height) {
+                return makeMainPath(height, true, false);
+            },
+            pathRightDown(height) {
+                return makeMainPath(height, false, true);
+            },
+            pathRightUp(height) {
+                return makeMainPath(height, false, true);
+            },
+        };
+    }
+
     /**
      * @param {Blockly.RenderedConnection} connection
      */
@@ -152,7 +184,9 @@ class CustomConstantProvider extends Blockly.zelos.ConstantProvider {
             checks = connection.targetConnection.getCheck();
         }
         if (connection.type == Blockly.ConnectionType.INPUT_VALUE || connection.type == Blockly.ConnectionType.OUTPUT_VALUE) {
-            if (checks && checks.indexOf('JSONArray') !== -1) {
+            if (checks && checks.indexOf('Function') !== -1) {
+                return this.RHOMBUS;
+            } else if (checks && checks.indexOf('JSONArray') !== -1) {
                 return this.ROUNDEDINVERTED;
             } else if (checks && checks.indexOf('JSONObject') !== -1) {
                 return this.ROUNDEL;
