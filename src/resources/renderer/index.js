@@ -1,3 +1,5 @@
+import Blockly from 'blockly/core'
+
 class CustomConstantProvider extends Blockly.zelos.ConstantProvider {
     init() {
         super.init()
