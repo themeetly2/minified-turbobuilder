@@ -1,6 +1,11 @@
 import javascriptGenerator from '../javascriptGenerator';
 
 const start = `
+if (!Scratch.unsandboxed) {
+  alert("This extension needs to be unsandboxed to run!")
+  return
+}
+
 function doSound(ab, cd, runtime) {
 const audioEngine = runtime.audioEngine;
 

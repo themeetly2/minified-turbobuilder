@@ -116,7 +116,7 @@ function register() {
         colour: categoryColor
     }, (block) => {
         const COMMENT = block.getFieldValue('COMMENT')
-        const code = `// ${Comment}`;
+        const code = `// ${COMMENT}`;
         return `${code}\n`;
     })
 

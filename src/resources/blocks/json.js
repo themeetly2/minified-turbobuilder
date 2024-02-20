@@ -265,6 +265,30 @@ function register() {
         const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
         return [`Object.values(${X})`, javascriptGenerator.ORDER_ATOMIC];
     })
+
+    // merge
+    registerBlock(`${categoryPrefix}objectmerge`, {
+        message0: 'merge object %1 with %2',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "check": "JSONObject"
+            },
+            {
+                "type": "input_value",
+                "name": "Y",
+                "check": "JSONObject"
+            },
+        ],
+        output: "JSONObject",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
+        return [`{...${X}, ...${Y}}`, javascriptGenerator.ORDER_ATOMIC];
+    })
 }
 
 export default register;
