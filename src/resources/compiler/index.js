@@ -1,7 +1,7 @@
 import javascriptGenerator from '../javascriptGenerator';
 
 const start = `
-if (!Scratch.unsandboxed) {
+if (!Scratch.extensions.unsandboxed) {
   alert("This extension needs to be unsandboxed to run!")
   return
 }
