@@ -26,8 +26,9 @@ export default (blockName, jsonData, compileFunction) => {
             console.log("debug: ", returns)
             if (typeof(returns) == 'string') {
                 returns.replace(/\\/g, "\\\\")
-                returns.replace(/\'/g, "\\'")
+                returns.replace(/'/g, "\\'")
             }
+            console.log("debug: ", returns)
             return returns
         }
 
