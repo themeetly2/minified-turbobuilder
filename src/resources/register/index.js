@@ -18,5 +18,18 @@ export default (blockName, jsonData, compileFunction) => {
     Blockly.Blocks[blockName] = blockObject
 
     // register block compile function
-    javascriptGenerator[blockName] = compileFunction;
+    javascriptGenerator[blockName] = (block) => {
+        //field safe thing
+        let getFieldValueOrigin = block.getFieldValue
+        block.getFieldValue = (name) => {
+            let returns = getFieldValueOrigin(name)
+            if (typeof(returns) == 'string') {
+                returns.replace(/\\/g, "\\\\")
+                returns.replace(/\'/g, "\\'")
+            }
+            return returns
+        }
+
+        return block
+    };
 }
