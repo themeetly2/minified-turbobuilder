@@ -25,8 +25,8 @@ export default (blockName, jsonData, compileFunction) => {
             let returns = altFunc(name)
             console.log("debug: ", returns)
             if (typeof(returns) == 'string') {
-                returns.replace(/\\/g, "\\\\\\\\")
-                returns.replace(/'/g, "\\\\'")
+                returns = returns.replace(/\\/g, "\\\\")
+                returns = returns.replace(/'/g, "\\'")
             }
             console.log("debug: ", returns)
             return returns
