@@ -22,11 +22,14 @@ export default (blockName, jsonData, compileFunction) => {
         //field safe thing
         let getFieldValueOrigin = block.getFieldValue
         block.getFieldValue = (name) => {
+            console.log(name)
             let returns = getFieldValueOrigin(name)
+            console.log(returns)
             if (typeof(returns) == 'string') {
                 returns.replace(/\\/g, "\\\\")
                 returns.replace(/\'/g, "\\'")
             }
+            console.log(returns)
             return returns
         }
 
