@@ -20,9 +20,9 @@ export default (blockName, jsonData, compileFunction) => {
     // register block compile function
     javascriptGenerator[blockName] = (block) => {
         //field safe thing
-        let getFieldValueOrigin = block.getFieldValue
+        let altFunc = a=>block.getField(a).getValue()
         block.getFieldValue = (name) => {
-            let returns = getFieldValueOrigin(name)
+            let returns = altFunc(a)
             if (typeof(returns) == 'string') {
                 returns.replace(/\\/g, "\\\\")
                 returns.replace(/\'/g, "\\'")
