@@ -59,7 +59,6 @@ function register() {
                 "name": "FUNC"
             }
         ],
-        nextStatement: null,
         inputsInline: false,
         colour: categoryColor,
     }, (block) => {
@@ -70,13 +69,13 @@ function register() {
         const FUNC = javascriptGenerator.statementToCode(block, 'FUNC');
         
         const code = `blocks.push({
-            opcode: \`${ID}\`,
+            opcode: "${ID}",
             blockType: Scratch.BlockType.${TYPE},
-            text: \`${TEXT}\`,
+            text: "${TEXT}",
             arguments: { ${INPUTS} },
             disableMonitor: true
         });
-        Extension.prototype[\`${ID}\`] = async (args, util) => { ${FUNC} };`;
+        Extension.prototype["${ID}"] = async (args, util) => { ${FUNC} };`;
         return `${code}\n`;
     })
 
@@ -132,6 +131,42 @@ function register() {
         const code = `"${ID}": {
             type: Scratch.ArgumentType.${TYPE}, ${DEFAULT ? `
             defaultValue: ${DEFAULT},`: ''}
+        },`;
+        return `${code}\n`;
+    })
+    registerBlock(`${categoryPrefix}menu`, {
+        message0: 'create menu input %1 id: %2 %3 menu: %4',
+        args0: [
+            {
+                "type": "input_dummy"
+            },
+            {
+                "type": "field_input",
+                "name": "ID",
+                "text": "ID",
+                "spellcheck": false
+            },
+            {
+                "type": "input_dummy"
+            },
+            {
+                "type": "field_input",
+                "name": "MENU",
+                "text": "ID",
+                "spellcheck": false
+            },
+        ],
+        nextStatement: "BlockInput",
+        previousStatement: "BlockInput",
+        inputsInline: false,
+        colour: categoryColor,
+    }, (block) => {
+        const ID = block.getFieldValue('ID')
+        const MENU = block.getFieldValue('MENU')
+        
+        const code = `"${ID}": {
+            type: Scratch.ArgumentType.STRING,
+            menu: '${MENU}'
         },`;
         return `${code}\n`;
     })

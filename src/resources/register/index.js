@@ -23,12 +23,11 @@ export default (blockName, jsonData, compileFunction) => {
         let altFunc = a=>block.getField(a).getValue()
         block.getFieldValue = (name) => {
             let returns = altFunc(name)
-            console.log("debug: ", returns)
             if (typeof(returns) == 'string') {
                 returns = returns.replace(/\\/g, "\\\\")
                 returns = returns.replace(/'/g, "\\'")
+                returns = returns.replace(/"/g, "\\\"")
             }
-            console.log("debug: ", returns)
             return returns
         }
 

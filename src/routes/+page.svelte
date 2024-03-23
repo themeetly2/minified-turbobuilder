@@ -62,6 +62,7 @@
     import registerJSON from "../resources/blocks/json.js";
     import registerBlocks from "../resources/blocks/blocks.js";
     import registerFunctions from "../resources/blocks/functions.js";
+    import registerMenus from "../resources/blocks/menus.js";
     import registerDebug from "../resources/blocks/debug.js";
     
     registerCore();
@@ -76,6 +77,7 @@
     registerJSON();
     registerBlocks();
     registerFunctions();
+    registerMenus();
     registerDebug();
 
     const en = {
