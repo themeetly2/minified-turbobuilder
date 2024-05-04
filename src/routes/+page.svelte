@@ -31,8 +31,8 @@
     const Theme = Blockly.Theme.defineTheme("BasicTheme", {
         base: Blockly.Themes.Classic,
         fontStyle: {
-            family: '"Source Code Pro", monospace',
-            weight: "700",
+            family: '"Inter", sans-serif',
+            weight: "500",
             size: 12,
         },
         startHats: true,
@@ -54,6 +54,7 @@
     import registerEvents from "../resources/blocks/events.js";
     import registerControl from "../resources/blocks/control.js";
     import registerSensing from "../resources/blocks/sensing.js";
+    import registerSprites from "../resources/blocks/sprites.js";
     import registerSound from "../resources/blocks/sound.js";
     import registerLiterals from "../resources/blocks/literals.js";
     import registerOperators from "../resources/blocks/operators.js";
@@ -70,6 +71,7 @@
     registerEvents();
     registerSound();
     registerSensing();
+    registerSprites();
     registerLiterals();
     registerOperators();
     registerConversions();

@@ -1,4 +1,11 @@
 <xml>
+    <category name="Sprites" colour="#4C97FF">
+        <block type="sprites_stage" />
+        <block type="sprites_isstage" />
+    </category>
+    <category name="Sound" colour="#CF63CF">
+        <block type="sound_startsound" />
+    </category>
     <category name="Events" colour="#FFBF00">
         <block type="events_interval" />
         <block type="events_timeout" />
@@ -17,9 +24,6 @@
         <block type="control_case" />
         <block type="control_default" />
         <block type="control_break" />
-    </category>
-    <category name="Sound" colour="#CF63CF">
-        <block type="sound_startsound" />
     </category>
     <category name="Sensing" colour="#5CB1D6">
         <!--
@@ -54,6 +58,7 @@
         <sep gap="48"></sep>
         <block type="operators_and" />
         <block type="operators_or" />
+        <block type="operators_xor" />
         <block type="operators_not" />
         <sep gap="48"></sep>
         <block type="operators_add" />
@@ -66,6 +71,7 @@
         <block type="operators_root" />
         <block type="operators_adv" />
         <sep gap="48"></sep>
+        <block type="operators_random" />
         <block type="operators_randomint" />
         <sep gap="48"></sep>
         <block type="operators_join" />

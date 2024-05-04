@@ -42,14 +42,11 @@ function register() {
         const ID = block.getFieldValue('ID')
         const VALUES = javascriptGenerator.valueToCode(block, 'VALUES', javascriptGenerator.ORDER_ATOMIC)
         const REPORTERS = block.getFieldValue('REPORTERS')
-        const temp = compileVars.new()
         
         const code = `menus["${ID}"] = {
             acceptReporters: ${REPORTERS},
-            values: '${temp}'
-        }
-        
-        Extension.prototype['${temp}'] = async () => {return ${VALUES || '[]'} }`;
+            values: ${VALUES || '[]'}
+        }`
         return `${code}\n`;
     })
 }
