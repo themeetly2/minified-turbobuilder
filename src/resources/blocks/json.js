@@ -79,7 +79,7 @@ function register() {
     }, (block) => {
         const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
         const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
-        return [`await (async () => { var y = ${Y}; y.push(${X}); return y })()`, javascriptGenerator.ORDER_ATOMIC];
+        return [`[...${Y}, ${X}]`, javascriptGenerator.ORDER_ATOMIC];
     })
 
     // set
