@@ -45,7 +45,7 @@ function register() {
         
         const code = `menus["${ID}"] = {
             acceptReporters: ${REPORTERS},
-            values: ${VALUES || '[]'}
+            items: ${VALUES || '[]'}
         }`
         return `${code}\n`;
     })
