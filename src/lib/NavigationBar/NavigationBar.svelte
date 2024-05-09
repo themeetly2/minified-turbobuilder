@@ -20,10 +20,10 @@
 
 <div class="nav">
     <img
-        src="/favicon_any.png"
+        src="/logos/outline.svg"
         alt="Logo"
         class="logo-margin"
-        style="height: 30px;"
+        style="height: 40px;"
     />
     <button class="theme-switcher" on:click={switchTheme}>
         <img src="/images/theme_switcher.svg" alt="Theme Switcher" />
