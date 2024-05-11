@@ -36,6 +36,7 @@ function register() {
                 "name": "TYPE",
                 "options": [
                     [ "block", "COMMAND" ],
+                    [ "hat", "EVENT" ],
                     [ "reporter", "REPORTER" ],
                     [ "boolean", "BOOLEAN" ],
                 ]
@@ -73,7 +74,8 @@ function register() {
             blockType: Scratch.BlockType.${TYPE},
             text: "${TEXT}",
             arguments: { ${INPUTS} },
-            disableMonitor: true
+            disableMonitor: true,
+            isEdgeActivated: false
         });
         Extension.prototype["${ID}"] = async (args, util) => { ${FUNC} };`;
         return `${code}\n`;
@@ -205,6 +207,27 @@ function register() {
     }, (block) => {
         const VALUE = javascriptGenerator.valueToCode(block, 'VALUE', javascriptGenerator.ORDER_ATOMIC);
         const code = `return ${VALUE || ''}`;
+        return `${code}\n`;
+    })
+
+    // return
+    registerBlock(`${categoryPrefix}callhat`, {
+        message0: 'call hat %1',
+        args0: [
+            {
+                "type": "field_input",
+                "name": "NAME",
+                "text": "HATID",
+                "spellcheck": false
+            }
+        ],
+        previousStatement: null,
+        nextStatement: null,
+        inputsInline: true,
+        colour: categoryColor,
+    }, (block) => {
+        const NAME = block.getFieldValue('NAME')
+        const code = `Scratch.vm.runtime.startHats(\`\${Extension.prototype.getInfo().id}_${NAME}\`)`;
         return `${code}\n`;
     })
 }
