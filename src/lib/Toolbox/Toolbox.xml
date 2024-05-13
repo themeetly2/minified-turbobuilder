@@ -1,7 +1,13 @@
 <xml>
     <category name="Sprites" colour="#4C97FF">
+        <block type="sprites_getsprite" />
+        <sep gap="48"></sep>
         <block type="sprites_stage" />
         <block type="sprites_isstage" />
+        <sep gap="48"></sep>
+        <block type="sprites_getx" />
+        <block type="sprites_gety" />
+        <block type="sprites_getdir" />
     </category>
     <category name="Sound" colour="#CF63CF">
         <block type="sound_startsound" />
@@ -123,6 +129,7 @@
     </category>
     <category name="Menus" colour="#CB48E8">
         <block type="menus_create" />
+        <block type="menus_created" />
     </category>
     <category name="Functions" colour="#5531D6">
         <block type="functions_define">
