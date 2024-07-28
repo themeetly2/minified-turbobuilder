@@ -71,6 +71,7 @@
         <block type="operators_minus" />
         <block type="operators_multiply" />
         <block type="operators_divide" />
+        <block type="operators_modulo" />
         <block type="operators_power" />
         <sep gap="48"></sep>
         <block type="operators_log" />
