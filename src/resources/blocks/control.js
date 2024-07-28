@@ -82,7 +82,7 @@ function register() {
             {
                 "type": "input_value",
                 "name": "BOOL",
-                "check": "BOOLEAN"
+                "check": "Boolean"
             },
             {
                 "type": "input_dummy"
