@@ -83,6 +83,7 @@
         <block type="operators_randomint" />
         <sep gap="48"></sep>
         <block type="operators_join" />
+        <block type="operators_split" />
         <block type="operators_letter" />
         <block type="operators_length" />
     </category>

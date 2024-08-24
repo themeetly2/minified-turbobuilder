@@ -220,6 +220,31 @@ function register() {
         return [`(${String(X) || ''} + ${String(Y) || ''})`, javascriptGenerator.ORDER_ATOMIC];
     })
 
+    // split
+    registerBlock(`${categoryPrefix}split`, {
+        message0: 'split %1 with %2',
+        args0: [
+            {
+                "type": "input_value",
+                "name": "X",
+                "checks": "String"
+            },
+            {
+                "type": "input_value",
+                "name": "Y",
+                "checks": "String"
+            }
+        ],
+        output: "JSONArray",
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const X = javascriptGenerator.valueToCode(block, 'X', javascriptGenerator.ORDER_ATOMIC);
+        const Y = javascriptGenerator.valueToCode(block, 'Y', javascriptGenerator.ORDER_ATOMIC);
+
+        return [`(${X} || "").split(${Y} || "")`, javascriptGenerator.ORDER_ATOMIC];
+    })
+
     // x + y
     registerBlock(`${categoryPrefix}add`, {
         message0: '%1 + %2',
