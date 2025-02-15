@@ -82,6 +82,24 @@ function register() {
         return `${code}\n`;
     })
 
+    // floating code block
+    registerBlock(`${categoryPrefix}rawfloating`, {
+        message0: 'raw %1',
+        args0: [
+            {
+                "type": "field_input",
+                "name": "RAW",
+                "spellcheck": false
+            }
+        ],
+        inputsInline: true,
+        colour: categoryColor
+    }, (block) => {
+        const RAW = block.getFieldValue('RAW')
+        const code = `${RAW}`;
+        return `${code}\n`;
+    })
+
     // raw reporter
     registerBlock(`${categoryPrefix}raw`, {
         message0: 'raw %1',
