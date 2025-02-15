@@ -7,7 +7,7 @@ const categoryColor = '#CF63CF';
 function register() {
     // start playing a sound (and also it needs to load lol!!)
     registerBlock(`${categoryPrefix}startsound`, {
-        message0: 'start sound %1',
+        message0: 'play audio from url %1',
         args0: [
             {
                 "type": "field_input",
@@ -22,7 +22,7 @@ function register() {
         colour: categoryColor,
     }, (block) => {
         const SOUND = block.getFieldValue('SOUND')
-        const code = `doSound(\`${SOUND}\`, Scratch.vm.runtime.targets.find(target => target.isStage), Scratch.vm.runtime);`;
+        const code = `new Audio(\`${SOUND}\`).play();`;
         return `${code}\n`;
     })
 }
