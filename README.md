@@ -1,6 +1,6 @@
 <img src="./icon.png" width="64" height="64" /> <img src="./icon_title.png" height="64" />
 
-# TurboBuilder
+# TurboBuilder (Minified)
 Create extensions for TurboWarp using block-based coding.
 
 ## In development
