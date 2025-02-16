@@ -1,4 +1,4 @@
-name: Install dependencies and run server
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,5 +24,11 @@ jobs:
       - name: Install dependencies
         run: npm i --force
 
-      - name: Run server
-        run: npm run dev
+      - name: Build project
+        run: npm run build  # Adjust if your build command is different
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # The branch where the site will be deployed
+          folder: dist  # Adjust if your build output is in a different folder
