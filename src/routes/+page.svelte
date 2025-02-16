@@ -510,14 +510,6 @@
                         </p>
                     {/if}
                 {/if}
-                <h3>Extra Icons</h3>
-                <p>
-                    Blocks can use their own icons instead of the Extension
-                    icon.
-                    <br />
-                    Add more images here to use them.
-                </p>
-                <StyledButton>Add Image</StyledButton>
             </div>
             <div class="row-subsubmenus">
                 <div class="codeActionsWrapper">
